@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>◊ FallBooksPractice · sovereign accountancy practice management · deadlines · agent · time · billing · PII · AML</title>
+<meta name="description" content="Sovereign practice management for UK accountancy firms · master deadline grid (SA/CT/VAT/PAYE/CH) · HMRC agent (64-8) tracker · time recording · fee billing · PII · AML supervision · professional body fees · CPD · per-adviser & firm P&L. Single HTML, IDB primary, MIT, mesh-aware.">
+<meta name="prime" content="809">
+<meta name="theme-color" content="#0b0a0f">
+<link rel="manifest" href='data:application/manifest+json,{"name":"FallBooksPractice","short_name":"practice","start_url":"./","display":"standalone","background_color":"%230b0a0f","theme_color":"%23b8974a","icons":[{"src":"data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 192 192%27><rect width=%27192%27 height=%27192%27 fill=%27%230b0a0f%27 rx=%2828%27/><text x=%2796%27 y=%27140%27 font-family=%27Georgia, serif%27 font-size=%27122%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23b8974a%27>%E2%97%8A</text></svg>","sizes":"192x192","type":"image/svg+xml"}]}'>
+<style>
+:root{
+  --void:#0b0a0f;--void-2:#13121a;--ink:#1a1922;--ink-2:#22212c;
+  --line:#2a2934;--line-soft:#1f1e28;
+  --cream:#e6e1d6;--cream-dim:#a8a395;--cream-muted:#6e6a5e;
+  --brass:#b8974a;--amber:#ff8c00;--ox:#8b1a1a;
+  --green:#4ade80;--red:#ef4444;--blue:#60a5fa;--yellow:#fbbf24;--black:#000;
+  --serif:Georgia,'Libre Baskerville',ui-serif,serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'IBM Plex Mono','SF Mono',ui-monospace,Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--void);color:var(--cream);font:14px/1.55 var(--sans);min-height:100dvh;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer;background:transparent;border:none;color:inherit}
+input,textarea,select{font-family:inherit;background:var(--ink);border:1px solid var(--line);color:var(--cream);border-radius:3px;padding:7px 10px;outline:none;font-size:13px}
+input:focus,textarea:focus,select:focus{border-color:var(--brass)}
+input[type=number]{font-family:var(--mono)}
+a{color:var(--brass)} a:hover{color:var(--amber)}
+.app{min-height:100dvh;display:grid;grid-template-rows:48px 1fr}
+header{display:flex;align-items:center;border-bottom:1px solid var(--line);background:var(--void-2);user-select:none}
+.brand{display:flex;align-items:center;gap:10px;padding:0 16px;height:100%;border-right:1px solid var(--line)}
+.brand .mark{width:28px;height:28px;background:linear-gradient(135deg,var(--brass),var(--amber));border-radius:5px;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:16px;color:var(--void)}
+.brand .name{font-family:var(--serif);font-weight:600;font-size:14px;letter-spacing:0.02em}
+.brand .seal{font-family:var(--mono);font-size:9px;color:var(--cream-muted);letter-spacing:0.18em;text-transform:uppercase}
+nav.tabs{display:flex;flex:1;overflow-x:auto;align-items:stretch}
+nav.tabs button{padding:0 14px;font-size:12px;color:var(--cream-dim);letter-spacing:0.04em;display:flex;align-items:center;gap:6px;border-right:1px solid var(--line-soft);height:100%;white-space:nowrap;border-top:2px solid transparent}
+nav.tabs button:hover{background:var(--ink);color:var(--cream)}
+nav.tabs button.active{background:var(--ink);color:var(--brass);border-top-color:var(--brass)}
+.tools-r{display:flex;align-items:center;gap:5px;padding:0 14px;height:100%;border-left:1px solid var(--line)}
+.tool-btn{padding:5px 11px;border-radius:3px;font-size:11px;color:var(--cream-dim);letter-spacing:0.06em;text-transform:uppercase;font-family:var(--mono);border:1px solid var(--line)}
+.tool-btn:hover{background:var(--ink);color:var(--cream);border-color:var(--brass)}
+.tool-btn.primary{background:var(--brass);color:var(--void);border-color:var(--brass);font-weight:600}
+.tool-btn.primary:hover{background:var(--amber);border-color:var(--amber)}
+main{padding:18px 22px 60px;overflow-y:auto;max-width:1320px;margin:0 auto;width:100%}
+.disclaimer{background:rgba(139,26,26,0.15);border:1px solid var(--ox);border-left:3px solid var(--ox);border-radius:3px;padding:12px 16px;margin-bottom:18px;font-size:12px;color:var(--cream)}
+.disclaimer strong{color:var(--brass)}
+.section-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;gap:14px;flex-wrap:wrap}
+.section-h h2{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:0.01em}
+.section-h .sub{font-family:var(--mono);font-size:11px;color:var(--cream-muted);letter-spacing:0.08em;text-transform:uppercase}
+.section-h .actions{display:flex;gap:6px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:14px}
+.card{background:var(--void-2);border:1px solid var(--line);border-radius:4px;padding:16px 18px}
+.card h3{font-family:var(--serif);font-size:14px;font-weight:600;margin-bottom:10px;color:var(--cream);letter-spacing:0.01em}
+.card h3 .meta{font-family:var(--mono);font-size:10px;color:var(--brass);letter-spacing:0.1em;margin-left:8px}
+.kpi{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--line-soft);font-size:13px}
+.kpi:last-child{border-bottom:none}
+.kpi .l{color:var(--cream-dim)} .kpi .v{font-family:var(--mono);color:var(--cream);font-weight:500}
+.kpi .v.green{color:var(--green)}.kpi .v.red{color:var(--red)}.kpi .v.amber{color:var(--amber)}.kpi .v.brass{color:var(--brass)}.kpi .v.blue{color:var(--blue)}.kpi .v.black{color:#888}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
+.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}
+.field label{display:block;font-family:var(--mono);font-size:10px;color:var(--cream-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px}
+.field input,.field select,.field textarea{width:100%}
+.field .hint{font-size:10px;color:var(--cream-muted);margin-top:3px;font-family:var(--mono)}
+.btn{padding:7px 14px;border:1px solid var(--brass);border-radius:3px;font-size:12px;color:var(--cream);background:transparent;letter-spacing:0.04em;cursor:pointer}
+.btn:hover{border-color:var(--amber);color:var(--amber)}
+.btn.primary{background:var(--brass);color:var(--void);border-color:var(--brass);font-weight:600}
+.btn.primary:hover{background:var(--amber);border-color:var(--amber);color:var(--void)}
+.btn.danger:hover{border-color:var(--red);color:var(--red)}
+.btn.sm{padding:4px 9px;font-size:11px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line-soft);text-align:left;vertical-align:top}
+th{color:var(--brass);font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600}
+td.r{text-align:right;font-family:var(--mono)}
+td.mono{font-family:var(--mono);font-size:12px}
+tr.total td{font-weight:600;border-top:1px solid var(--brass);border-bottom:none;padding-top:10px}
+tr.total td.r{color:var(--brass)}
+tr.clickable{cursor:pointer}
+tr.clickable:hover td{background:var(--ink)}
+.bar{height:6px;background:var(--ink);border-radius:3px;overflow:hidden;margin:6px 0}
+.bar > div{height:100%;background:var(--brass);transition:width 0.3s}
+.bar > div.green{background:var(--green)}.bar > div.red{background:var(--red)}.bar > div.amber{background:var(--amber)}
+.tag{display:inline-block;padding:2px 7px;border-radius:11px;font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--brass);color:var(--brass);margin-right:4px;white-space:nowrap}
+.tag.amber{border-color:var(--amber);color:var(--amber)}
+.tag.green{border-color:var(--green);color:var(--green)}
+.tag.red{border-color:var(--red);color:var(--red)}
+.tag.blue{border-color:var(--blue);color:var(--blue)}
+.tag.muted{border-color:var(--cream-muted);color:var(--cream-muted)}
+.tag.black{border-color:#666;color:#888;background:#000}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.dot.green{background:var(--green)}.dot.amber{background:var(--amber)}.dot.red{background:var(--red)}.dot.black{background:#000;border:1px solid #555}
+.empty{padding:24px;text-align:center;color:var(--cream-muted);font-style:italic;font-size:12px}
+.chat{display:flex;flex-direction:column;gap:10px;max-height:60vh;overflow-y:auto;padding:6px}
+.msg{padding:10px 14px;border-radius:6px;max-width:88%;font-size:13px;line-height:1.55;white-space:pre-wrap}
+.msg.user{background:var(--ink);align-self:flex-end;border-bottom-right-radius:2px}
+.msg.bot{background:var(--void-2);border:1px solid var(--line);border-left:2px solid var(--brass);align-self:flex-start;border-bottom-left-radius:2px}
+.msg.bot .src{font-family:var(--mono);font-size:10px;color:var(--cream-muted);letter-spacing:0.08em;margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}
+.chat-input{display:flex;gap:8px;margin-top:10px}
+.chat-input input{flex:1;padding:11px 14px}
+.palette-bg,.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:flex-start;justify-content:center;padding-top:14vh;z-index:900;backdrop-filter:blur(4px)}
+.palette-bg.open,.modal-bg.open{display:flex}
+.modal-bg{align-items:center;padding:18px}
+.palette{background:var(--void-2);border:1px solid var(--brass);border-radius:5px;width:min(640px,90%);box-shadow:0 18px 50px rgba(0,0,0,0.7);overflow:hidden}
+.palette-hd{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center}
+.palette-hd .glyph{font-family:var(--serif);font-size:18px;color:var(--brass)}
+.palette-hd input{flex:1;border:none;background:transparent;font-size:15px;padding:4px}
+.palette-bd{max-height:50vh;overflow:auto;padding:8px}
+.modal{background:var(--void-2);border:1px solid var(--brass);border-radius:4px;padding:22px;max-width:760px;width:100%;max-height:90vh;overflow:auto}
+.modal h2{font-family:var(--serif);font-size:17px;margin-bottom:14px}
+.modal .actions{display:flex;gap:8px;margin-top:16px;justify-content:flex-end;flex-wrap:wrap}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--brass);color:var(--void);padding:9px 18px;border-radius:3px;font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;opacity:0;transition:all 0.22s;z-index:1100;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.alloc-row{display:grid;grid-template-columns:2fr 1fr 32px;gap:6px;margin-bottom:5px;align-items:center}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;color:var(--cream-dim);margin-top:6px}
+.legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+.deadline-row td:first-child{border-left:3px solid transparent}
+.deadline-row.green td:first-child{border-left-color:var(--green)}
+.deadline-row.amber td:first-child{border-left-color:var(--amber)}
+.deadline-row.red td:first-child{border-left-color:var(--red)}
+.deadline-row.black td:first-child{border-left-color:#000;background:rgba(0,0,0,0.3)}
+.cls{padding:5px 9px;background:var(--ink);border-radius:3px;font-family:var(--mono);font-size:11px;color:var(--cream);margin-right:5px;margin-bottom:5px;display:inline-block;border:1px solid var(--line);cursor:pointer}
+.cls.active{background:var(--brass);color:var(--void);border-color:var(--brass);font-weight:600}
+.timegrid{display:grid;grid-template-columns:140px repeat(7,1fr);gap:1px;background:var(--line);border:1px solid var(--line);font-family:var(--mono);font-size:11px}
+.timegrid > div{background:var(--void-2);padding:6px 8px;min-height:34px}
+.timegrid .th{background:var(--ink);color:var(--brass);text-transform:uppercase;letter-spacing:0.08em;font-size:9px;font-weight:600}
+@media (max-width:760px){nav.tabs button{padding:0 11px;font-size:11px}main{padding:14px 14px 50px}.row,.row3,.row4{grid-template-columns:1fr}.grid,.grid2{grid-template-columns:1fr}.timegrid{grid-template-columns:100px repeat(7,1fr);font-size:10px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand">
+    <div class="mark">◊</div>
+    <div><div class="name">FallBooksPractice</div></div>
+    <div class="seal">v1 · prime 809</div>
+  </div>
+  <nav class="tabs" id="tabNav"></nav>
+  <div class="tools-r">
+    <button class="tool-btn primary" onclick="openPalette()" title="ask · Ctrl+K">◊ ask</button>
+    <button class="tool-btn" id="tierBadge" onclick="openModal('settings')">T0</button>
+    <button class="tool-btn" onclick="openModal('settings')">cog</button>
+  </div>
+</header>
+<main id="view"></main>
+</div>
+<div class="palette-bg" id="palette">
+  <div class="palette">
+    <div class="palette-hd">
+      <span class="glyph">◊</span>
+      <input type="text" id="pInput" placeholder="ask · 'ICAEW PII min cover?' · 'AML supervisor options?' · '64-8 period?'">
+      <span id="pTier" style="font-family:var(--mono);font-size:10px;color:var(--cream-muted)">T0</span>
+    </div>
+    <div class="palette-bd" id="pBody"></div>
+  </div>
+</div>
+<div class="modal-bg" id="modal">
+  <div class="modal"><h2 id="modalTitle">.</h2><div id="modalBody"></div></div>
+</div>
+<div class="toast" id="toast">.</div>
+
+<script>
+'use strict';
+// ════════════════════════════════════════════════════════════════
+// FallBooksPractice v1.0.0 · sovereign UK accountancy practice mgmt · MIT
+// ◊·κ=1 · prime 809 · multi-client deadlines · agent · time · billing · PII · AML
+// TOOL · NOT HMRC-APPROVED FILER · submissions remain practitioner responsibility
+// ════════════════════════════════════════════════════════════════
+const TOOLNAME='fallbookspractice';
+const VERSION='1.0.0';
+const PRIME=809;
+const STORE='fallbookspractice-v1';
+const TAX_YEAR='2025-26';
+
+const RULES={
+  vatStandard:0.20,
+  vatRegThreshold:90000,
+  // PII (UK accountancy bodies)
+  icaewPiMinFloor:100000,                // £100k floor
+  icaewPiCap:1500000,                    // £1.5M cap
+  icaewPiMultiplier:25,                  // 25× highest fee
+  accaPiMinFloor:25000,                  // £25k or 25× gross fee income
+  accaPiMultiplier:25,
+  // CPD
+  icaewCpdHours:90,                      // 90 hrs/yr practising
+  accaCpdHours:40,                       // 40 units/yr (21 verifiable)
+  cimaCpdHours:20,
+  // 64-8 (HMRC agent authorisation)
+  agentAuth64_8Years:5,                  // not strictly time-limited but recommend 5y review
+  // deadlines
+  deadlineAmberDays:30,
+  deadlineRedDays:7,
+  // billing
+  invoiceTermsDays:14,
+  // retention
+  practiceRecordYears:7,
+  hmrcRecordYears:6,
+  // time recording
+  timeUnitMinutes:6,                     // 6-min units
+};
+
+const TABS=[
+  {id:'dashboard',label:'◊ dashboard'},
+  {id:'deadlines',label:'deadlines'},
+  {id:'clients',label:'clients'},
+  {id:'time',label:'time'},
+  {id:'billing',label:'billing'},
+  {id:'agent',label:'HMRC agent'},
+  {id:'pii',label:'PII'},
+  {id:'aml',label:'AML'},
+  {id:'cpd',label:'CPD'},
+  {id:'advisers',label:'advisers'},
+  {id:'firm-pl',label:'firm P&L'},
+  {id:'qa',label:'Q&A'},
+];
+
+// Deadline kind catalogue — drives auto-population from servicesEngaged + yearEnd + vatScheme
+const DEADLINE_KINDS={
+  'SA100':{label:'SA100 self-assessment',service:'sa',recurring:'yearly'},
+  'CT600':{label:'CT600 corporation tax return',service:'ct',recurring:'yearly'},
+  'CT-PAY':{label:'CT payment (9m+1d after PE)',service:'ct',recurring:'yearly'},
+  'VAT100':{label:'VAT return',service:'vat',recurring:'quarterly'},
+  'P11D':{label:'P11D benefits in kind',service:'payroll',recurring:'yearly'},
+  'P60':{label:'P60 to employees',service:'payroll',recurring:'yearly'},
+  'ACC':{label:'Companies House accounts',service:'accounts',recurring:'yearly'},
+  'CS01':{label:'Confirmation statement',service:'companies-house-filings',recurring:'yearly'},
+  'PAYE-FPS':{label:'PAYE FPS (next payday)',service:'payroll',recurring:'monthly'},
+  'PAYE-EPS':{label:'PAYE EPS monthly',service:'payroll',recurring:'monthly'},
+};
+
+const FEE_TYPES=['initial','ongoing','fixed-monthly','per-job','advisory'];
+const ACTIVITY_TYPES=['compliance','advisory','queries','admin','meeting'];
+const PROF_BODIES=['ICAEW','ACCA','CIMA','AAT','CIOT','ATT','IFA','other'];
+
+// T0 canned Q&A (offline)
+const T0=[
+  {q:/icaew.*pi|icaew.*pii|icaew.*insur/i,a:`ICAEW Professional Indemnity minimum cover (2025-26):\n\n• Minimum: 25 × highest annual fee from any one client OR £1.5M (whichever is LOWER)\n• Floor: not less than £100k cover regardless\n• Single-claim and aggregate cover both required\n• Excess limited to greater of £30k or 2% of cover\n• Run-off cover required if firm ceases (2 yrs minimum)\n\nSource: ICAEW Professional Indemnity Insurance Regulations`},
+  {q:/acca.*pi|acca.*pii|acca.*insur/i,a:`ACCA Professional Indemnity minimum cover (2025-26):\n\n• Minimum: 25 × gross fee income OR £25,000 (whichever HIGHER)\n• Aggregate cover not less than minimum\n• Run-off cover for 6 years post-cessation recommended\n• Practising cert holders must hold qualifying PI\n\nSource: ACCA Global Practising Regulations`},
+  {q:/icaew.*cpd|icaew.*continuing/i,a:`ICAEW CPD requirement (from 2023):\n\n• Practising members: 90 hours/year (CPD must be relevant to work)\n• Non-practising: still 21 hours/year baseline\n• Risk-based category (A/B/C) — most practising = Category 1 highest\n• Annual declaration by 31 October\n• Verifiable evidence required for sample audit\n\nSource: ICAEW CPD Regulations`},
+  {q:/acca.*cpd|acca.*continuing/i,a:`ACCA CPD requirement (per yr):\n\n• 40 CPD units total (1 unit = 1 hour relevant learning)\n• At least 21 units must be VERIFIABLE\n• Up to 19 units may be non-verifiable (reading, reflection)\n• Annual declaration with subscription renewal\n• Practising cert holders: additional risk-based requirements\n\nSource: ACCA Continuing Professional Development guide`},
+  {q:/aml.*super|supervis|supervisor.*opt/i,a:`AML supervisor options for UK accountancy practices (MLR 2017):\n\nA firm MUST be supervised by ONE of:\n• HMRC (default if no body supervises)\n• ICAEW · ACCA · CIMA · AAT · CIOT · ATT · IFA · IPA · ICAS · CAI\n\nProfessional body members typically supervised by the body. Bookkeepers without body membership default to HMRC.\n\nAnnual fee + risk-based supervision visits. Failure to register = criminal offence under MLR 2017 reg 56.`},
+  {q:/64-8|agent auth|hmrc agent.*period/i,a:`64-8 HMRC agent authorisation:\n\n• Form 64-8 authorises an agent to deal with HMRC for SA / CT / VAT / PAYE / CIS\n• NOT strictly time-limited — remains until cancelled by client OR agent\n• Best practice: review every 3-5 years, re-confirm at engagement renewal\n• Cancelled by either party in writing to HMRC\n• Online Agent Services: separate digital handshake (MTD), refresh per service\n\nSource: HMRC form 64-8 notes`},
+  {q:/retain.*client.*record|client record.*retain|record.*retention/i,a:`Client record retention:\n\n• HMRC: 6 years from end of accounting period (corporation tax / income tax records)\n• ICAEW practice records: 7 years minimum\n• AML/KYC documents: 5 years from end of business relationship (MLR 2017 reg 40)\n• Payroll records: 3 years from end of tax year (PAYE) + 6 years for HMRC review\n\nKeep in encrypted form. Soft-delete with archivedAt timestamp; do not hard-delete within retention window.`},
+  {q:/verify.*identity|client.*identif|kyc.*step/i,a:`Reasonable steps to verify client identity (MLR 2017 reg 28):\n\n• Identity: name, DOB, address verified from independent source\n• Individuals: passport/driving licence + recent (3m) utility bill or bank statement\n• Companies: Companies House confirmation, PSC register check, directors ID'd\n• Beneficial owners (25%+ owner/controller): identified and verified\n• Sanctions screening: OFSI consolidated list at onboarding and ongoing\n• PEP check: enhanced due diligence if PEP/PEP family\n\nRecord retained 5y post-relationship end.`},
+  {q:/engagement.*renew|engagement letter|letter.*engagement/i,a:`Engagement letter renewal cadence:\n\n• ICAEW: recommend annual review; reissue when scope/fee changes materially\n• ACCA: must be in writing before work commences; review at least annually\n• MUST be reissued when: service scope changes, fees change, AML risk grade changes, beneficial ownership changes\n• Both parties sign (electronic signature acceptable)\n• Retain signed copy in client file (7 years post-relationship)`},
+  {q:/fee.*notif|notify.*fee|fee.*chang|fee.*increase/i,a:`Fee notification rules:\n\n• ICAEW Code §240: fees must be agreed in advance and notified in writing\n• Material changes require written notification BEFORE work commences\n• Disengagement letter required if fees disputed and unpaid\n• "Lowballing" prohibited (cannot set initial fee so low it impairs quality)\n• Contingent fees prohibited for assurance work; permitted for tax advisory with safeguards`},
+  {q:/practice purchase|buy.*practice|fee block/i,a:`Practice (fee block) purchase considerations:\n\n• Typical valuation: 0.8-1.4 × recurring fees (varies by client mix, retention)\n• Earnouts standard (2-3 year retention claw-back)\n• Due diligence: AML files, engagement letters, PI claims history, client concentration\n• ICAEW notification required if transfer affects continuing professional duties\n• TUPE may apply if staff transfer\n• Client consent for record transfer (data protection)`},
+  {q:/sar.*threshold|suspicious.*activity|nca.*report/i,a:`SAR (Suspicious Activity Report) — NCA:\n\n• NO monetary threshold — any suspicion of money laundering OR terrorist financing reportable\n• MLRO (Money Laundering Reporting Officer) submits via SAR Online\n• "Knowledge or suspicion" test (POCA 2002 s.330)\n• Tipping-off offence: must not alert subject (POCA 2002 s.333A)\n• Failure to report = criminal offence (up to 5 years)\n• Defence Against Money Laundering (DAML) SAR if seeking consent\n\nMaintain internal SAR register (date, MLRO ref, outcome).`},
+  {q:/risk assess|risk.*review|cadence/i,a:`Risk assessment review cadence:\n\n• Firm-wide risk assessment (FWRA): review at least annually OR on material change (new services, new jurisdictions, new client types)\n• Client risk assessment (CRA): at onboarding, then at least annually for ongoing relationships\n• Trigger events for re-assessment: PEP status change, beneficial ownership change, unusual activity, change of service scope\n• Document review (date, reviewer, decision) — supervisor will sample\n\nSource: MLR 2017 reg 18 (FWRA) + reg 28 (ongoing monitoring)`},
+  {q:/suspicious.*report|sar.*how|how.*report/i,a:`Suspicious activity reporting workflow:\n\n1. Identify suspicion (any team member can raise) — log internally\n2. MLRO reviews — concludes suspicion exists?\n3. If yes: submit SAR via SAR Online (NCA) within reasonable time\n4. If seeking consent to proceed with transaction: DAML SAR (7 working days + 31 calendar days moratorium possible)\n5. DO NOT tip off subject (criminal offence)\n6. Internal register: date raised, MLRO decision, NCA reference, outcome\n7. Retain 5 years\n\nNCA SAR Online: nationalcrimeagency.gov.uk/sars`},
+];
+
+// ════════════════════════════════════════════════════════════════
+// IDB layer
+// ════════════════════════════════════════════════════════════════
+const IDB_STORES=['firms','advisers','clients','deadlines','timeEntries','invoices','feeRecords','hmrcAgentAuths','piPolicies','professionalBodyFees','expenses','sars','cpdLog','audit','settings'];
+
+let db=null;
+function openDB(){
+  return new Promise((res,rej)=>{
+    const r=indexedDB.open(STORE,1);
+    r.onupgradeneeded=()=>{
+      const d=r.result;
+      IDB_STORES.forEach(s=>{
+        if(!d.objectStoreNames.contains(s)) d.createObjectStore(s,{keyPath:'id'});
+      });
+    };
+    r.onsuccess=()=>{db=r.result;res(db)};
+    r.onerror=()=>rej(r.error);
+  });
+}
+function tx(store,mode='readonly'){return db.transaction(store,mode).objectStore(store)}
+function dbPut(store,rec){return new Promise((res,rej)=>{const r=tx(store,'readwrite').put(rec);r.onsuccess=()=>res(rec);r.onerror=()=>rej(r.error)})}
+function dbGet(store,id){return new Promise((res,rej)=>{const r=tx(store).get(id);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+function dbAll(store){return new Promise((res,rej)=>{const r=tx(store).getAll();r.onsuccess=()=>res(r.result||[]);r.onerror=()=>rej(r.error)})}
+function dbDel(store,id){return new Promise((res,rej)=>{const r=tx(store,'readwrite').delete(id);r.onsuccess=()=>res();r.onerror=()=>rej(r.error)})}
+
+// ════════════════════════════════════════════════════════════════
+// State + utilities
+// ════════════════════════════════════════════════════════════════
+const state={firm:null,advisers:[],clients:[],deadlines:[],timeEntries:[],invoices:[],feeRecords:[],hmrcAgentAuths:[],piPolicies:[],professionalBodyFees:[],expenses:[],sars:[],cpdLog:[],settings:{tier:'T0',apiKey:''},tab:'dashboard',filterClient:'',filterAdviser:''};
+
+const uuid=()=>crypto.randomUUID?crypto.randomUUID():'x'.repeat(8).replace(/x/g,()=>(Math.random()*16|0).toString(16));
+const id=(p)=>p+'_'+uuid().slice(0,12);
+const now=()=>Date.now();
+const fmtGBP=n=>'£'+(Number(n)||0).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});
+const fmtDate=t=>!t?'—':new Date(t).toLocaleDateString('en-GB');
+const fmtDT=t=>!t?'—':new Date(t).toLocaleString('en-GB',{dateStyle:'short',timeStyle:'short'});
+const daysFromNow=t=>!t?0:Math.ceil((t-now())/86400000);
+const isoToTs=s=>{if(!s)return 0;const d=new Date(s);return isNaN(d.getTime())?0:d.getTime()};
+const tsToISO=t=>!t?'':new Date(t).toISOString().slice(0,10);
+const toast=(m,k='info')=>{const t=document.getElementById('toast');t.textContent=m;t.className='toast show '+(k==='err'?'err':'');setTimeout(()=>t.classList.remove('show'),1800)};
+const esc=s=>(s==null?'':String(s)).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// Audit chain
+async function appendAudit(action,reasoning,payload={},adviserId='',clientId=''){
+  const prev=(await dbAll('audit')).sort((a,b)=>b.i-a.i)[0];
+  const prevHash=prev?prev.docHash:'GENESIS';
+  const i=prev?prev.i+1:1;
+  const body={i,ts:now(),tool:TOOLNAME,adviserId,clientId,action,reasoning,configVersion:`${TOOLNAME}@${VERSION}`,prevHash,payload};
+  const json=JSON.stringify(body);
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(json));
+  const docHash=Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  body.docHash=docHash; body.id='aud_'+i;
+  await dbPut('audit',body); return body;
+}
+
+// ════════════════════════════════════════════════════════════════
+// KONOMI shim · fall-signal + fall-books mesh
+// ════════════════════════════════════════════════════════════════
+let bcSignal=null, bcBooks=null;
+function meshInit(){
+  try{
+    bcSignal=new BroadcastChannel('fall-signal');
+    bcBooks=new BroadcastChannel('fall-books');
+    bcBooks.onmessage=onBooksMessage;
+    // boot sync request
+    setTimeout(()=>{
+      bcBooks.postMessage({v:1,type:'sync.request',ts:now(),source:TOOLNAME,payload:{}});
+    },400);
+  }catch(e){console.warn('mesh unavailable',e)}
+}
+function meshSend(type,payload){
+  if(!bcBooks)return;
+  try{bcBooks.postMessage({v:1,type,ts:now(),source:TOOLNAME,payload});}catch(e){}
+}
+async function onBooksMessage(ev){
+  const m=ev.data; if(!m||m.source===TOOLNAME)return;
+  try{
+    if(m.type==='sync.request'){
+      meshSend('sync.snapshot',{clients:state.clients,advisers:state.advisers,firm:state.firm});
+    } else if(m.type==='sync.snapshot'){
+      const p=m.payload||{};
+      if(p.firm && (!state.firm||((p.firm.updatedAt||0)>(state.firm.updatedAt||0)))){state.firm=p.firm;await dbPut('firms',p.firm);}
+      for(const c of (p.clients||[])){
+        const local=state.clients.find(x=>x.id===c.id);
+        if(!local || (c.updatedAt||0)>(local.updatedAt||0)){await dbPut('clients',c);}
+      }
+      for(const a of (p.advisers||[])){
+        const local=state.advisers.find(x=>x.id===a.id);
+        if(!local || (a.updatedAt||0)>(local.updatedAt||0)){await dbPut('advisers',a);}
+      }
+      await refreshState(); render();
+    } else if(m.type==='client.created'||m.type==='client.updated'){
+      const c=m.payload; if(!c||!c.id)return;
+      const local=state.clients.find(x=>x.id===c.id);
+      if(!local || (c.updatedAt||0)>(local.updatedAt||0)){
+        await dbPut('clients',c); await refreshState(); render();
+      }
+    } else if(m.type==='adviser.created'||m.type==='adviser.updated'){
+      const a=m.payload; if(!a||!a.id)return;
+      await dbPut('advisers',a); await refreshState(); render();
+    } else if(m.type==='firm.updated'){
+      if(m.payload){state.firm=m.payload;await dbPut('firms',m.payload);render();}
+    } else if(m.type==='submission.recorded'){
+      // auto-mark deadlines done
+      const sub=m.payload; if(!sub||!sub.clientId||!sub.kind)return;
+      const open=state.deadlines.filter(d=>d.clientId===sub.clientId && d.kind===sub.kind && d.status==='pending');
+      for(const d of open){
+        d.status='submitted'; d.submittedAt=sub.submittedAt||now(); d.submissionRef=sub.ref||'';
+        d.updatedAt=now(); await dbPut('deadlines',d);
+        if(d.recurring){await rollDeadlineForward(d);}
+      }
+      if(open.length){toast(`Auto-marked ${open.length} deadline(s) done`);await refreshState();render();}
+    }
+  }catch(e){console.warn('mesh handler error',e)}
+}
+
+// ════════════════════════════════════════════════════════════════
+// Deadline engine — auto-populate from servicesEngaged
+// ════════════════════════════════════════════════════════════════
+function deriveDeadlinesForClient(client){
+  const out=[];
+  const services=client.servicesEngaged||[];
+  const yearEndMD=client.yearEnd||'03-31'; // MM-DD
+  const today=new Date(); const Y=today.getUTCFullYear();
+  function nextYearEnd(){
+    const [mm,dd]=yearEndMD.split('-').map(Number);
+    let d=new Date(Date.UTC(Y,(mm||3)-1,dd||31,12,0,0));
+    if(d.getTime() < now()) d=new Date(Date.UTC(Y+1,(mm||3)-1,dd||31,12,0,0));
+    return d.getTime();
+  }
+  const ye=nextYearEnd();
+  // Accounts (Ltd: 9m after YE)
+  if(services.includes('accounts') && client.entityType==='limited-company'){
+    out.push({kind:'ACC',dueAt:ye+9*30.5*86400000,notes:`Companies House accounts (9m after period end ${tsToISO(ye)})`});
+  }
+  // CT600 (12m after PE)
+  if(services.includes('ct') && client.entityType==='limited-company'){
+    out.push({kind:'CT600',dueAt:ye+12*30.5*86400000,notes:`CT600 (12m after period end ${tsToISO(ye)})`});
+    out.push({kind:'CT-PAY',dueAt:ye+(9*30.5+1)*86400000,notes:`CT payment (9m+1d after period end)`});
+  }
+  // SA100 (31 Jan following 5 April year)
+  if(services.includes('sa')){
+    const taxYE=new Date(Date.UTC(Y,3,5,12,0,0));
+    if(taxYE.getTime()<now()) taxYE.setUTCFullYear(Y+1);
+    const sa=new Date(Date.UTC(taxYE.getUTCFullYear()+1,0,31,12,0,0));
+    out.push({kind:'SA100',dueAt:sa.getTime(),notes:`SA100 for ${taxYE.getUTCFullYear()-1}-${String(taxYE.getUTCFullYear()).slice(-2)} tax year`});
+  }
+  // VAT (quarterly: 1m+7d after quarter end). Find next quarter from today.
+  if(services.includes('vat')){
+    const m=today.getUTCMonth();
+    const qEnds=[2,5,8,11]; // Mar, Jun, Sep, Dec
+    let qe=qEnds.find(q=>q>=m); if(qe===undefined){qe=2;}
+    const yq = qe>=m ? Y : Y+1;
+    const qEnd=new Date(Date.UTC(yq,qe,28,12,0,0));
+    out.push({kind:'VAT100',dueAt:qEnd.getTime()+(30+7)*86400000,notes:`VAT quarter ending ~${tsToISO(qEnd.getTime())}`});
+  }
+  // P11D (6 July following tax year end 5 April)
+  if(services.includes('payroll')){
+    const ty=new Date(Date.UTC(Y,3,5,12,0,0));
+    if(ty.getTime()<now()) ty.setUTCFullYear(Y+1);
+    out.push({kind:'P11D',dueAt:new Date(Date.UTC(ty.getUTCFullYear(),6,6,12,0,0)).getTime(),notes:`P11D for ${ty.getUTCFullYear()-1}-${String(ty.getUTCFullYear()).slice(-2)}`});
+    out.push({kind:'P60',dueAt:new Date(Date.UTC(ty.getUTCFullYear(),4,31,12,0,0)).getTime(),notes:`P60 to employees by 31 May`});
+    // next-month FPS
+    const fps=new Date(today); fps.setUTCDate(fps.getUTCDate()+25);
+    out.push({kind:'PAYE-FPS',dueAt:fps.getTime(),notes:`PAYE FPS (next payroll run)`});
+  }
+  // CS01 (annual confirmation statement)
+  if(services.includes('companies-house-filings') && client.entityType==='limited-company'){
+    const cs=new Date(today); cs.setUTCFullYear(cs.getUTCFullYear()+1);
+    out.push({kind:'CS01',dueAt:cs.getTime(),notes:`CS01 confirmation statement`});
+  }
+  return out.map(d=>({
+    id:id('dl'), clientId:client.id, firmId:state.firm?.id||'',
+    kind:d.kind, dueAt:d.dueAt, status:'pending', submittedAt:null, submissionRef:'',
+    notes:d.notes, recurring:DEADLINE_KINDS[d.kind]?.recurring||'',
+    createdAt:now(), updatedAt:now()
+  }));
+}
+
+async function rollDeadlineForward(d){
+  const meta=DEADLINE_KINDS[d.kind]; if(!meta||!meta.recurring)return;
+  let nextDue=d.dueAt;
+  if(meta.recurring==='monthly')nextDue+=30*86400000;
+  else if(meta.recurring==='quarterly')nextDue+=91*86400000;
+  else if(meta.recurring==='yearly')nextDue+=365*86400000;
+  const nd={id:id('dl'),clientId:d.clientId,firmId:d.firmId,kind:d.kind,dueAt:nextDue,status:'pending',submittedAt:null,submissionRef:'',notes:d.notes+' (rolled)',recurring:meta.recurring,createdAt:now(),updatedAt:now()};
+  await dbPut('deadlines',nd);
+  meshSend('deadline.created',nd);
+}
+
+function deadlineColour(d){
+  if(d.status==='submitted')return 'muted';
+  const days=daysFromNow(d.dueAt);
+  if(days<0)return 'black';
+  if(days<=RULES.deadlineRedDays)return 'red';
+  if(days<=RULES.deadlineAmberDays)return 'amber';
+  return 'green';
+}
+
+// ════════════════════════════════════════════════════════════════
+// PII calc
+// ════════════════════════════════════════════════════════════════
+function calcIcaewPiMin(){
+  // 25 × highest annual fee from a single client, OR £1.5M (whichever LOWER), floor £100k
+  const byClient={};
+  state.feeRecords.forEach(f=>{
+    if(!f.clientId)return;
+    const ts=f.recordedAt||f.createdAt||now();
+    const ageDays=(now()-ts)/86400000;
+    if(ageDays>365)return;
+    byClient[f.clientId]=(byClient[f.clientId]||0)+(Number(f.amount)||0);
+  });
+  const highest=Math.max(0,...Object.values(byClient));
+  const calc=Math.min(highest*RULES.icaewPiMultiplier, RULES.icaewPiCap);
+  return Math.max(calc, RULES.icaewPiMinFloor);
+}
+function calcAccaPiMin(){
+  const total=state.feeRecords.filter(f=>(now()-(f.recordedAt||f.createdAt||now()))/86400000<=365).reduce((s,f)=>s+(Number(f.amount)||0),0);
+  return Math.max(total*RULES.accaPiMultiplier, RULES.accaPiMinFloor);
+}
+function requiredPiCover(){
+  const body=state.firm?.professionalBody||'ICAEW';
+  if(body==='ACCA') return calcAccaPiMin();
+  return calcIcaewPiMin();
+}
+
+// ════════════════════════════════════════════════════════════════
+// Boot
+// ════════════════════════════════════════════════════════════════
+async function refreshState(){
+  state.advisers=await dbAll('advisers');
+  state.clients=await dbAll('clients');
+  state.deadlines=await dbAll('deadlines');
+  state.timeEntries=await dbAll('timeEntries');
+  state.invoices=await dbAll('invoices');
+  state.feeRecords=await dbAll('feeRecords');
+  state.hmrcAgentAuths=await dbAll('hmrcAgentAuths');
+  state.piPolicies=await dbAll('piPolicies');
+  state.professionalBodyFees=await dbAll('professionalBodyFees');
+  state.expenses=await dbAll('expenses');
+  state.sars=await dbAll('sars');
+  state.cpdLog=await dbAll('cpdLog');
+  const firms=await dbAll('firms'); state.firm=firms[0]||null;
+  const settingsAll=await dbAll('settings'); if(settingsAll[0])Object.assign(state.settings,settingsAll[0]);
+}
+
+async function ensureDemo(){
+  if(state.firm)return;
+  // Seed demo firm + adviser + 1 client + fees + time + deadlines
+  const firmId=id('fm');
+  const firm={id:firmId,createdAt:now(),updatedAt:now(),name:'Patel & Co Chartered Accountants',tradingName:'',
+    practiceType:'limited-company',professionalBody:'ICAEW',practiceCertNo:'PC-12345',
+    fcaRefNo:'',companiesHouseNo:'09876543',vatNumber:'GB123456789',
+    amlSupervisor:'ICAEW',amlSupervisorRef:'AML-2024-789',
+    hmrcAgentRef:'AGT/4567/8901',cqbeStatus:'PCB',
+    registeredAddress:{line1:'1 Mansion House Pl',line2:'',city:'London',postcode:'EC4N 8AD',country:'GB'},
+    piInsurer:'AON Lockton',piPolicyNo:'PI-2025-FAB',piExpiresAt:now()+200*86400000,
+    brandColor:'#8b1a1a',setupCompletedAt:now()};
+  await dbPut('firms',firm); state.firm=firm;
+
+  const advId=id('ad');
+  const adviser={id:advId,firmId,createdAt:now(),updatedAt:now(),archivedAt:null,
+    name:'Aisha Patel FCA',email:'a.patel@patelco.example',phone:'+44 20 7946 0000',
+    professionalBody:'ICAEW',membershipNo:'987654',
+    practisingCert:{active:true,expiresAt:now()+300*86400000},
+    cpdHoursThisYear:38,
+    hourlyRate:150,status:'active',startedAt:now()-5*365*86400000,leftAt:null};
+  await dbPut('advisers',adviser);
+
+  const clientId=id('cl');
+  const client={id:clientId,firmId,ts:now(),updatedAt:now(),archivedAt:null,
+    entityType:'limited-company',entityName:'Sterling Bakery Ltd',tradingName:'Sterling Bakery',
+    companiesHouseNo:'11223344',ctUtr:'1122334455',vatNumber:'GB987654321',vatScheme:'standard',
+    payeReference:'987/SB12345',
+    yearEnd:'03-31',accountingPeriodStart:'2025-04-01',accountingPeriodEnd:'2026-03-31',
+    beneficialOwners:[{name:'Marcus Sterling',dob:'1975-04-12',ownershipPct:75,controlNotes:'Sole director'}],
+    pscFromCompaniesHouse:[],
+    servicesEngaged:['accounts','ct','vat','payroll','companies-house-filings'],
+    engagement:{startedAt:now()-2*365*86400000,type:'ongoing',feeBasis:'fixed-monthly',feeAmount:450,feeFrequency:'monthly',nextReviewDue:now()+180*86400000,letterOfEngagementHash:'',letterOfEngagementSignedAt:now()-365*86400000},
+    kyc:{status:'verified',riskGrade:'low',pepFlag:false,sanctionsStatus:'clear',
+      sourceOfFundsForServices:'Trading revenue',natureAndPurposeOfBusiness:'Artisan bakery — wholesale & retail',
+      expectedTransactionPatterns:'Daily receipts £1-3k, weekly supplier payments',documentsHeld:[],
+      amlSupervisor:'ICAEW',amlSupervisorRef:'AML-2024-789',lastReviewAt:now()-30*86400000,nextReviewDue:now()+335*86400000},
+    deadlines:[],
+    adviserId:advId};
+  await dbPut('clients',client);
+
+  // Derived deadlines
+  const dls=deriveDeadlinesForClient(client);
+  for(const d of dls)await dbPut('deadlines',d);
+
+  // Demo fee records
+  for(let i=0;i<3;i++){
+    const fr={id:id('fr'),clientId,firmId,adviserId:advId,
+      type:'fixed-monthly',amount:450,recordedAt:now()-(i+1)*30*86400000,
+      narrative:`Monthly retainer ${i+1} months ago`,invoiceId:'',ts:now()-(i+1)*30*86400000};
+    await dbPut('feeRecords',fr);
+  }
+  // Demo time entries
+  await dbPut('timeEntries',{id:id('te'),clientId,adviserId:advId,firmId,
+    activity:'compliance',units:8,minutes:48,
+    narrative:'VAT return Q3 prep',billable:true,billedRef:'',
+    recordedAt:now()-2*86400000,ts:now()-2*86400000});
+  await dbPut('timeEntries',{id:id('te'),clientId,adviserId:advId,firmId,
+    activity:'advisory',units:10,minutes:60,
+    narrative:'Tax planning call — dividend vs salary',billable:true,billedRef:'',
+    recordedAt:now()-1*86400000,ts:now()-1*86400000});
+
+  // PI policy
+  await dbPut('piPolicies',{id:id('pi'),firmId,insurer:'AON Lockton',policyNo:'PI-2025-FAB',
+    premium:3200,coverSingle:1500000,coverAggregate:2000000,
+    inceptionAt:now()-165*86400000,expiresAt:now()+200*86400000,
+    accrualMonthly:Math.round(3200/12*100)/100,notes:'Standard ICAEW QPI cover'});
+
+  // Professional body fees
+  await dbPut('professionalBodyFees',{id:id('pbf'),firmId,body:'ICAEW',category:'firm-subscription',
+    amount:850,paidAt:now()-60*86400000,renewalAt:now()+305*86400000,accrualMonthly:Math.round(850/12*100)/100,notes:'Annual firm subscription'});
+  await dbPut('professionalBodyFees',{id:id('pbf'),firmId,body:'ICAEW',category:'aml-supervision',
+    amount:450,paidAt:now()-60*86400000,renewalAt:now()+305*86400000,accrualMonthly:Math.round(450/12*100)/100,notes:'AML supervision fee'});
+
+  await appendAudit('demo.seeded','Initial demo dataset',{firm:firm.name,client:client.entityName},advId,clientId);
+  await refreshState();
+}
+
+async function boot(){
+  await openDB();
+  await refreshState();
+  await ensureDemo();
+  meshInit();
+  render(); renderTabs();
+  document.getElementById('pInput').addEventListener('keydown',e=>{
+    if(e.key==='Enter'){runQuery(e.target.value);}
+    if(e.key==='Escape')closePalette();
+  });
+  document.addEventListener('keydown',e=>{
+    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openPalette();}
+  });
+  document.getElementById('palette').addEventListener('click',e=>{if(e.target.id==='palette')closePalette()});
+  document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+  document.getElementById('tierBadge').textContent=state.settings.tier||'T0';
+}
+
+// ════════════════════════════════════════════════════════════════
+// Rendering
+// ════════════════════════════════════════════════════════════════
+function renderTabs(){
+  const n=document.getElementById('tabNav');
+  n.innerHTML=TABS.map(t=>`<button class="${state.tab===t.id?'active':''}" onclick="setTab('${t.id}')">${t.label}</button>`).join('');
+}
+function setTab(t){state.tab=t;renderTabs();render();}
+
+const DISCLAIMER=`<div class="disclaimer"><strong>◊ Tool · not regulated advice.</strong> FallBooksPractice assists UK accountancy practices with multi-client deadline tracking, HMRC agent management, time recording, fee billing, PII / AML / CPD compliance and firm P&L. It is <strong>not an HMRC-approved filing system</strong>; submissions to HMRC and Companies House remain the practitioner's responsibility. Sovereign — data never leaves the device unless exported. Verify all calculations against current ICAEW / ACCA / HMRC guidance.</div>`;
+
+function render(){
+  const v=document.getElementById('view');
+  const f={
+    dashboard:viewDashboard,deadlines:viewDeadlines,clients:viewClients,time:viewTime,
+    billing:viewBilling,agent:viewAgent,pii:viewPII,aml:viewAML,cpd:viewCPD,
+    advisers:viewAdvisers,'firm-pl':viewFirmPL,qa:viewQA
+  }[state.tab]||viewDashboard;
+  v.innerHTML=DISCLAIMER+f();
+}
+
+// ────── DASHBOARD ──────
+function viewDashboard(){
+  const open=state.deadlines.filter(d=>d.status==='pending');
+  const red=open.filter(d=>daysFromNow(d.dueAt)<=RULES.deadlineRedDays && daysFromNow(d.dueAt)>=0).length;
+  const overdue=open.filter(d=>daysFromNow(d.dueAt)<0).length;
+  const amber=open.filter(d=>{const x=daysFromNow(d.dueAt);return x>RULES.deadlineRedDays && x<=RULES.deadlineAmberDays}).length;
+  const wipMin=state.timeEntries.filter(t=>t.billable && !t.billedRef).reduce((s,t)=>s+(t.minutes||0),0);
+  const wipValue=state.timeEntries.filter(t=>t.billable && !t.billedRef).reduce((s,t)=>{
+    const ad=state.advisers.find(a=>a.id===t.adviserId); const rate=ad?.hourlyRate||120;
+    return s+(t.minutes||0)/60*rate;
+  },0);
+  const ytdFees=state.feeRecords.filter(f=>new Date(f.recordedAt).getUTCFullYear()===new Date().getUTCFullYear()).reduce((s,f)=>s+(Number(f.amount)||0),0);
+  const piDays=state.firm?.piExpiresAt?daysFromNow(state.firm.piExpiresAt):null;
+  const upcoming=open.sort((a,b)=>a.dueAt-b.dueAt).slice(0,8);
+
+  return `
+  <div class="section-h"><h2>Practice dashboard</h2><div class="sub">${esc(state.firm?.name||'—')} · ${esc(state.firm?.professionalBody||'—')}</div></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Deadlines <span class="meta">${open.length} OPEN</span></h3>
+      <div class="kpi"><span class="l"><span class="dot black"></span>Overdue</span><span class="v ${overdue?'red':''}">${overdue}</span></div>
+      <div class="kpi"><span class="l"><span class="dot red"></span>Red (≤7d)</span><span class="v ${red?'red':''}">${red}</span></div>
+      <div class="kpi"><span class="l"><span class="dot amber"></span>Amber (8-30d)</span><span class="v ${amber?'amber':''}">${amber}</span></div>
+      <div class="kpi"><span class="l"><span class="dot green"></span>Green (&gt;30d)</span><span class="v green">${open.length-red-amber-overdue}</span></div>
+    </div>
+    <div class="card">
+      <h3>WIP <span class="meta">UNBILLED</span></h3>
+      <div class="kpi"><span class="l">Time recorded</span><span class="v">${(wipMin/60).toFixed(1)} hrs</span></div>
+      <div class="kpi"><span class="l">Value @ adviser rate</span><span class="v brass">${fmtGBP(wipValue)}</span></div>
+      <div class="kpi"><span class="l">Entries</span><span class="v">${state.timeEntries.filter(t=>t.billable && !t.billedRef).length}</span></div>
+    </div>
+    <div class="card">
+      <h3>Fees YTD <span class="meta">${new Date().getUTCFullYear()}</span></h3>
+      <div class="kpi"><span class="l">Recorded</span><span class="v brass">${fmtGBP(ytdFees)}</span></div>
+      <div class="kpi"><span class="l">Clients</span><span class="v">${state.clients.length}</span></div>
+      <div class="kpi"><span class="l">Active advisers</span><span class="v">${state.advisers.filter(a=>a.status==='active').length}</span></div>
+    </div>
+    <div class="card">
+      <h3>PII <span class="meta">${esc(state.firm?.piInsurer||'—')}</span></h3>
+      <div class="kpi"><span class="l">Required cover</span><span class="v">${fmtGBP(requiredPiCover())}</span></div>
+      <div class="kpi"><span class="l">Held cover</span><span class="v">${fmtGBP(state.piPolicies[0]?.coverSingle||0)}</span></div>
+      <div class="kpi"><span class="l">Days to expiry</span><span class="v ${piDays==null?'':(piDays<30?'red':piDays<60?'amber':'green')}">${piDays==null?'—':piDays+'d'}</span></div>
+    </div>
+    <div class="card">
+      <h3>AML <span class="meta">${esc(state.firm?.amlSupervisor||'—')}</span></h3>
+      <div class="kpi"><span class="l">Supervisor ref</span><span class="v">${esc(state.firm?.amlSupervisorRef||'—')}</span></div>
+      <div class="kpi"><span class="l">SARs filed</span><span class="v">${state.sars.length}</span></div>
+      <div class="kpi"><span class="l">Last SAR</span><span class="v">${state.sars.length?fmtDate(Math.max(...state.sars.map(s=>s.filedAt))):'—'}</span></div>
+    </div>
+    <div class="card">
+      <h3>Upcoming · next 8</h3>
+      <table><thead><tr><th>Client</th><th>Kind</th><th class="r">Due</th></tr></thead><tbody>
+      ${upcoming.length?upcoming.map(d=>{
+        const c=state.clients.find(x=>x.id===d.clientId);
+        const col=deadlineColour(d);
+        return `<tr class="deadline-row ${col}"><td>${esc(c?.entityName||c?.lastName||'?')}</td><td class="mono">${d.kind}</td><td class="r"><span class="tag ${col}">${fmtDate(d.dueAt)}</span></td></tr>`;
+      }).join(''):'<tr><td colspan="3" class="empty">No deadlines</td></tr>'}
+      </tbody></table>
+    </div>
+  </div>`;
+}
+
+// ────── DEADLINES ──────
+function viewDeadlines(){
+  const filter=state.filterClient;
+  let rows=[...state.deadlines];
+  if(filter)rows=rows.filter(d=>d.clientId===filter);
+  rows.sort((a,b)=>{
+    if(a.status!==b.status)return a.status==='pending'?-1:1;
+    return a.dueAt-b.dueAt;
+  });
+  return `
+  <div class="section-h"><h2>Master deadline grid</h2>
+    <div class="actions">
+      <button class="btn sm" onclick="rebuildAllDeadlines()">↻ rebuild from clients</button>
+      <button class="btn sm primary" onclick="openModal('addDeadline')">+ manual</button>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <span class="cls ${!filter?'active':''}" onclick="state.filterClient='';render()">all</span>
+    ${state.clients.map(c=>`<span class="cls ${filter===c.id?'active':''}" onclick="state.filterClient='${c.id}';render()">${esc(c.entityName||c.lastName||'?')}</span>`).join('')}
+  </div>
+  <div class="card">
+    <div class="legend">
+      <span><span class="dot black"></span>Overdue</span>
+      <span><span class="dot red"></span>≤7d</span>
+      <span><span class="dot amber"></span>8-30d</span>
+      <span><span class="dot green"></span>&gt;30d</span>
+    </div>
+    <table><thead><tr><th>Client</th><th>Kind</th><th>Due</th><th>Days</th><th>Status</th><th>Sub ref</th><th>Notes</th><th></th></tr></thead><tbody>
+    ${rows.length?rows.map(d=>{
+      const c=state.clients.find(x=>x.id===d.clientId);
+      const col=deadlineColour(d);
+      const days=daysFromNow(d.dueAt);
+      return `<tr class="deadline-row ${col}">
+        <td>${esc(c?.entityName||c?.lastName||'?')}</td>
+        <td class="mono">${d.kind}</td>
+        <td class="mono">${fmtDate(d.dueAt)}</td>
+        <td class="mono">${d.status==='submitted'?'—':days+'d'}</td>
+        <td><span class="tag ${col}">${d.status}</span></td>
+        <td class="mono" style="font-size:11px">${esc(d.submissionRef||'')}</td>
+        <td style="font-size:12px;color:var(--cream-dim)">${esc(d.notes||'')}</td>
+        <td class="r">${d.status==='pending'?`<button class="btn sm primary" onclick="markDeadlineDone('${d.id}')">mark done</button>`:`<button class="btn sm" onclick="reopenDeadline('${d.id}')">reopen</button>`}
+        <button class="btn sm danger" onclick="deleteDeadline('${d.id}')">×</button></td>
+      </tr>`;
+    }).join(''):'<tr><td colspan="8" class="empty">No deadlines · add clients with servicesEngaged to auto-populate</td></tr>'}
+    </tbody></table>
+  </div>`;
+}
+
+async function markDeadlineDone(did){
+  const d=state.deadlines.find(x=>x.id===did); if(!d)return;
+  const ref=prompt('Submission reference (HMRC receipt / Companies House barcode):','')||'';
+  d.status='submitted'; d.submittedAt=now(); d.submissionRef=ref; d.updatedAt=now();
+  await dbPut('deadlines',d);
+  meshSend('deadline.marked-done',d);
+  meshSend('submission.recorded',{clientId:d.clientId,kind:d.kind,ref,submittedAt:d.submittedAt});
+  if(d.recurring) await rollDeadlineForward(d);
+  await appendAudit('deadline.submitted',`Marked ${d.kind} done`,{ref,due:d.dueAt},'',d.clientId);
+  await refreshState(); render(); toast('Deadline marked done');
+}
+async function reopenDeadline(did){
+  const d=state.deadlines.find(x=>x.id===did); if(!d)return;
+  d.status='pending'; d.submittedAt=null; d.submissionRef=''; d.updatedAt=now();
+  await dbPut('deadlines',d); await refreshState(); render();
+}
+async function deleteDeadline(did){
+  if(!confirm('Delete deadline?'))return;
+  await dbDel('deadlines',did); await refreshState(); render();
+}
+async function rebuildAllDeadlines(){
+  if(!confirm('Rebuild deadlines from clients? Pending deadlines will be replaced with newly-derived set; submitted entries preserved.'))return;
+  const subs=state.deadlines.filter(d=>d.status==='submitted');
+  for(const d of state.deadlines.filter(d=>d.status==='pending'))await dbDel('deadlines',d.id);
+  for(const c of state.clients){
+    const dls=deriveDeadlinesForClient(c);
+    for(const d of dls)await dbPut('deadlines',d);
+  }
+  await appendAudit('deadlines.rebuilt','Bulk rebuild from clients',{count:state.clients.length});
+  await refreshState(); render(); toast('Deadlines rebuilt');
+}
+
+// ────── CLIENTS ──────
+function viewClients(){
+  return `
+  <div class="section-h"><h2>Clients</h2>
+    <div class="actions"><button class="btn sm primary" onclick="openModal('addClient')">+ add client</button></div>
+  </div>
+  <div class="card">
+    <table><thead><tr><th>Name</th><th>Type</th><th>Services</th><th>Year-end</th><th class="r">Fee/mo</th><th>KYC</th><th></th></tr></thead><tbody>
+    ${state.clients.length?state.clients.map(c=>{
+      const fee=c.engagement?.feeBasis==='fixed-monthly'?c.engagement.feeAmount:0;
+      return `<tr>
+        <td><strong>${esc(c.entityName||(c.firstName+' '+c.lastName))}</strong>${c.tradingName?'<br><span style="color:var(--cream-muted);font-size:11px">t/a '+esc(c.tradingName)+'</span>':''}</td>
+        <td><span class="tag muted">${c.entityType}</span></td>
+        <td style="font-size:11px">${(c.servicesEngaged||[]).map(s=>`<span class="tag">${s}</span>`).join('')}</td>
+        <td class="mono">${esc(c.yearEnd||'—')}</td>
+        <td class="r">${fee?fmtGBP(fee):'—'}</td>
+        <td><span class="tag ${c.kyc?.status==='verified'?'green':c.kyc?.status==='failed'?'red':'amber'}">${c.kyc?.status||'pending'}</span></td>
+        <td class="r"><button class="btn sm" onclick="editClient('${c.id}')">edit</button> <button class="btn sm danger" onclick="archiveClient('${c.id}')">archive</button></td>
+      </tr>`;
+    }).join(''):'<tr><td colspan="7" class="empty">No clients yet</td></tr>'}
+    </tbody></table>
+  </div>`;
+}
+
+async function archiveClient(cid){
+  if(!confirm('Archive client? (soft-delete · 7-yr retention)'))return;
+  const c=state.clients.find(x=>x.id===cid); if(!c)return;
+  c.archivedAt=now(); c.updatedAt=now(); await dbPut('clients',c);
+  meshSend('client.archived',c);
+  await appendAudit('client.archived','User archived client',{id:cid},'',cid);
+  await refreshState(); render();
+}
+
+// ────── TIME ──────
+function viewTime(){
+  const recent=[...state.timeEntries].sort((a,b)=>b.recordedAt-a.recordedAt).slice(0,30);
+  const weekStart=new Date(); weekStart.setUTCHours(0,0,0,0); weekStart.setUTCDate(weekStart.getUTCDate()-weekStart.getUTCDay());
+  const weekEntries=state.timeEntries.filter(t=>t.recordedAt>=weekStart.getTime());
+  const weekMin=weekEntries.reduce((s,t)=>s+(t.minutes||0),0);
+  const byDay=[0,0,0,0,0,0,0];
+  weekEntries.forEach(t=>{const d=new Date(t.recordedAt).getUTCDay();byDay[d]+=(t.minutes||0)/60});
+
+  return `
+  <div class="section-h"><h2>Time recording</h2>
+    <div class="actions"><button class="btn sm primary" onclick="openModal('addTime')">+ log time</button></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>This week</h3>
+      <div class="kpi"><span class="l">Total hours</span><span class="v brass">${(weekMin/60).toFixed(1)}</span></div>
+      <div class="kpi"><span class="l">Billable</span><span class="v">${(weekEntries.filter(t=>t.billable).reduce((s,t)=>s+(t.minutes||0),0)/60).toFixed(1)} hrs</span></div>
+      <div class="kpi"><span class="l">Entries</span><span class="v">${weekEntries.length}</span></div>
+    </div>
+    <div class="card">
+      <h3>Week distribution</h3>
+      ${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map((d,i)=>`<div class="kpi"><span class="l">${d}</span><span class="v">${byDay[i].toFixed(1)}h</span></div>`).join('')}
+    </div>
+    <div class="card">
+      <h3>WIP unbilled <span class="meta">ALL TIME</span></h3>
+      ${state.clients.slice(0,8).map(c=>{
+        const min=state.timeEntries.filter(t=>t.clientId===c.id && t.billable && !t.billedRef).reduce((s,t)=>s+(t.minutes||0),0);
+        if(min===0)return '';
+        const ad=state.advisers.find(a=>a.id===c.adviserId); const rate=ad?.hourlyRate||120;
+        return `<div class="kpi"><span class="l">${esc(c.entityName||c.lastName||'?')}</span><span class="v">${(min/60).toFixed(1)}h · ${fmtGBP(min/60*rate)}</span></div>`;
+      }).join('')||'<div class="empty">No WIP</div>'}
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Recent entries</h3>
+    <table><thead><tr><th>Date</th><th>Client</th><th>Adviser</th><th>Activity</th><th class="r">Units</th><th class="r">Mins</th><th>Narrative</th><th>Billable</th><th></th></tr></thead><tbody>
+    ${recent.length?recent.map(t=>{
+      const c=state.clients.find(x=>x.id===t.clientId); const a=state.advisers.find(x=>x.id===t.adviserId);
+      return `<tr>
+        <td class="mono">${fmtDate(t.recordedAt)}</td>
+        <td>${esc(c?.entityName||c?.lastName||'?')}</td>
+        <td>${esc(a?.name||'—')}</td>
+        <td class="mono">${t.activity}</td>
+        <td class="r">${t.units}</td>
+        <td class="r">${t.minutes}</td>
+        <td style="font-size:12px">${esc(t.narrative||'')}</td>
+        <td><span class="tag ${t.billable?(t.billedRef?'muted':'amber'):'muted'}">${t.billable?(t.billedRef?'billed':'WIP'):'non-billable'}</span></td>
+        <td class="r"><button class="btn sm danger" onclick="deleteTime('${t.id}')">×</button></td>
+      </tr>`;
+    }).join(''):'<tr><td colspan="9" class="empty">No time entries</td></tr>'}
+    </tbody></table>
+  </div>`;
+}
+
+async function deleteTime(tid){if(!confirm('Delete entry?'))return; await dbDel('timeEntries',tid); await refreshState(); render();}
+
+// ────── BILLING ──────
+function viewBilling(){
+  const recent=[...state.feeRecords].sort((a,b)=>b.recordedAt-a.recordedAt).slice(0,30);
+  const byType={};
+  state.feeRecords.forEach(f=>{byType[f.type]=(byType[f.type]||0)+(Number(f.amount)||0)});
+  const monthlyRecurring=state.clients.filter(c=>c.engagement?.feeBasis==='fixed-monthly').reduce((s,c)=>s+(Number(c.engagement.feeAmount)||0),0);
+  return `
+  <div class="section-h"><h2>Fee billing</h2>
+    <div class="actions">
+      <button class="btn sm" onclick="runRecurringFees()">▶ run recurring</button>
+      <button class="btn sm primary" onclick="openModal('addFee')">+ record fee</button>
+      <button class="btn sm" onclick="openModal('generateInvoice')">generate invoice</button>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Recurring revenue</h3>
+      <div class="kpi"><span class="l">Monthly fixed</span><span class="v brass">${fmtGBP(monthlyRecurring)}</span></div>
+      <div class="kpi"><span class="l">Annualised</span><span class="v">${fmtGBP(monthlyRecurring*12)}</span></div>
+      <div class="kpi"><span class="l">Clients on retainer</span><span class="v">${state.clients.filter(c=>c.engagement?.feeBasis==='fixed-monthly').length}</span></div>
+    </div>
+    <div class="card">
+      <h3>Fees by type · all time</h3>
+      ${FEE_TYPES.map(t=>`<div class="kpi"><span class="l">${t}</span><span class="v">${fmtGBP(byType[t]||0)}</span></div>`).join('')}
+    </div>
+    <div class="card">
+      <h3>Invoices <span class="meta">${state.invoices.length}</span></h3>
+      ${state.invoices.length?state.invoices.slice(-5).reverse().map(inv=>`<div class="kpi"><span class="l">${esc(inv.number)}</span><span class="v">${fmtGBP(inv.total)}</span></div>`).join(''):'<div class="empty">No invoices yet</div>'}
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Fee ledger</h3>
+    <table><thead><tr><th>Date</th><th>Client</th><th>Adviser</th><th>Type</th><th class="r">Amount</th><th>Narrative</th><th>Invoice</th><th></th></tr></thead><tbody>
+    ${recent.length?recent.map(f=>{
+      const c=state.clients.find(x=>x.id===f.clientId);
+      const a=state.advisers.find(x=>x.id===f.adviserId);
+      return `<tr>
+        <td class="mono">${fmtDate(f.recordedAt)}</td>
+        <td>${esc(c?.entityName||c?.lastName||'?')}</td>
+        <td>${esc(a?.name||'—')}</td>
+        <td><span class="tag">${f.type}</span></td>
+        <td class="r">${fmtGBP(f.amount)}</td>
+        <td style="font-size:12px">${esc(f.narrative||'')}</td>
+        <td class="mono" style="font-size:11px">${esc(f.invoiceId||'')}</td>
+        <td class="r"><button class="btn sm danger" onclick="deleteFee('${f.id}')">×</button></td>
+      </tr>`;
+    }).join(''):'<tr><td colspan="8" class="empty">No fee records</td></tr>'}
+    </tbody></table>
+  </div>`;
+}
+async function deleteFee(fid){if(!confirm('Delete fee record?'))return; await dbDel('feeRecords',fid); await refreshState(); render();}
+
+async function runRecurringFees(){
+  // For each fixed-monthly client, post a fee if no fee recorded in the current month
+  const Y=new Date().getUTCFullYear(); const M=new Date().getUTCMonth();
+  let n=0;
+  for(const c of state.clients){
+    if(c.engagement?.feeBasis!=='fixed-monthly')continue;
+    const has=state.feeRecords.some(f=>f.clientId===c.id && new Date(f.recordedAt).getUTCFullYear()===Y && new Date(f.recordedAt).getUTCMonth()===M && f.type==='fixed-monthly');
+    if(has)continue;
+    const fr={id:id('fr'),clientId:c.id,firmId:state.firm?.id||'',adviserId:c.adviserId||'',
+      type:'fixed-monthly',amount:Number(c.engagement.feeAmount)||0,recordedAt:now(),
+      narrative:`Auto-recurring ${new Date().toLocaleString('en-GB',{month:'long'})} retainer`,invoiceId:'',ts:now()};
+    await dbPut('feeRecords',fr); meshSend('fee.recorded',fr); n++;
+  }
+  await appendAudit('recurring.fees.run',`Auto-posted ${n} monthly fees`,{count:n});
+  await refreshState(); render(); toast(`Posted ${n} recurring fees`);
+}
+
+// ────── HMRC AGENT ──────
+function viewAgent(){
+  return `
+  <div class="section-h"><h2>HMRC agent authorisations · 64-8</h2>
+    <div class="actions">
+      <span class="sub">Firm agent ref: <strong>${esc(state.firm?.hmrcAgentRef||'—')}</strong></span>
+      <button class="btn sm primary" onclick="openModal('addAgentAuth')">+ add auth</button>
+    </div>
+  </div>
+  <div class="card">
+    <table><thead><tr><th>Client</th><th>Service</th><th>64-8 date</th><th>Review due</th><th>Status</th><th>Notes</th><th></th></tr></thead><tbody>
+    ${state.hmrcAgentAuths.length?state.hmrcAgentAuths.map(a=>{
+      const c=state.clients.find(x=>x.id===a.clientId);
+      const days=daysFromNow(a.reviewDue);
+      const col=days==null?'muted':(days<0?'black':days<30?'red':days<90?'amber':'green');
+      return `<tr>
+        <td>${esc(c?.entityName||c?.lastName||'?')}</td>
+        <td><span class="tag">${a.service}</span></td>
+        <td class="mono">${fmtDate(a.authDate)}</td>
+        <td class="mono"><span class="tag ${col}">${fmtDate(a.reviewDue)}</span></td>
+        <td><span class="tag ${a.status==='active'?'green':'red'}">${a.status}</span></td>
+        <td style="font-size:12px">${esc(a.notes||'')}</td>
+        <td class="r"><button class="btn sm danger" onclick="deleteAgentAuth('${a.id}')">×</button></td>
+      </tr>`;
+    }).join(''):'<tr><td colspan="7" class="empty">No agent authorisations</td></tr>'}
+    </tbody></table>
+  </div>`;
+}
+async function deleteAgentAuth(aid){if(!confirm('Delete?'))return; await dbDel('hmrcAgentAuths',aid); await refreshState(); render();}
+
+// ────── PII ──────
+function viewPII(){
+  const body=state.firm?.professionalBody||'ICAEW';
+  const reqd=requiredPiCover();
+  const current=state.piPolicies[0];
+  const covered=current?current.coverSingle:0;
+  const gap=Math.max(0,reqd-covered);
+  return `
+  <div class="section-h"><h2>Professional indemnity insurance</h2>
+    <div class="actions"><button class="btn sm primary" onclick="openModal('addPi')">${current?'update':'+ add'} policy</button></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Required cover · ${body}</h3>
+      <div class="kpi"><span class="l">Calculated minimum</span><span class="v brass">${fmtGBP(reqd)}</span></div>
+      <div class="kpi"><span class="l">Held (single claim)</span><span class="v">${fmtGBP(covered)}</span></div>
+      <div class="kpi"><span class="l">Gap</span><span class="v ${gap>0?'red':'green'}">${fmtGBP(gap)}</span></div>
+      <div style="font-size:11px;color:var(--cream-muted);margin-top:10px">
+      ${body==='ICAEW'?'ICAEW: 25× highest annual single-client fee OR £1.5M (whichever LOWER) · floor £100k':''}
+      ${body==='ACCA'?'ACCA: 25× gross fee income OR £25k (whichever HIGHER)':''}
+      </div>
+    </div>
+    ${current?`
+    <div class="card">
+      <h3>Current policy</h3>
+      <div class="kpi"><span class="l">Insurer</span><span class="v">${esc(current.insurer)}</span></div>
+      <div class="kpi"><span class="l">Policy no</span><span class="v">${esc(current.policyNo)}</span></div>
+      <div class="kpi"><span class="l">Single-claim cover</span><span class="v">${fmtGBP(current.coverSingle)}</span></div>
+      <div class="kpi"><span class="l">Aggregate cover</span><span class="v">${fmtGBP(current.coverAggregate)}</span></div>
+      <div class="kpi"><span class="l">Annual premium</span><span class="v">${fmtGBP(current.premium)}</span></div>
+      <div class="kpi"><span class="l">Monthly accrual</span><span class="v">${fmtGBP(current.accrualMonthly)}</span></div>
+      <div class="kpi"><span class="l">Expires</span><span class="v ${daysFromNow(current.expiresAt)<30?'red':daysFromNow(current.expiresAt)<60?'amber':'green'}">${fmtDate(current.expiresAt)} (${daysFromNow(current.expiresAt)}d)</span></div>
+    </div>`:''}
+  </div>`;
+}
+
+// ────── AML ──────
+function viewAML(){
+  return `
+  <div class="section-h"><h2>AML supervision</h2>
+    <div class="actions">
+      <button class="btn sm" onclick="openModal('addSAR')">+ log SAR</button>
+      <button class="btn sm primary" onclick="openModal('amlReview')">+ annual review</button>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Firm supervision</h3>
+      <div class="kpi"><span class="l">Supervisor</span><span class="v brass">${esc(state.firm?.amlSupervisor||'—')}</span></div>
+      <div class="kpi"><span class="l">Ref</span><span class="v">${esc(state.firm?.amlSupervisorRef||'—')}</span></div>
+      <div class="kpi"><span class="l">Clients high-risk</span><span class="v ${state.clients.filter(c=>c.kyc?.riskGrade==='high').length?'red':''}">${state.clients.filter(c=>c.kyc?.riskGrade==='high').length}</span></div>
+      <div class="kpi"><span class="l">Clients PEP</span><span class="v">${state.clients.filter(c=>c.kyc?.pepFlag).length}</span></div>
+      <div class="kpi"><span class="l">Sanctions matches</span><span class="v ${state.clients.filter(c=>c.kyc?.sanctionsStatus==='match').length?'red':''}">${state.clients.filter(c=>c.kyc?.sanctionsStatus==='match').length}</span></div>
+    </div>
+    <div class="card">
+      <h3>SAR register</h3>
+      <div class="kpi"><span class="l">Total filed</span><span class="v brass">${state.sars.length}</span></div>
+      <div class="kpi"><span class="l">Last filed</span><span class="v">${state.sars.length?fmtDate(Math.max(...state.sars.map(s=>s.filedAt))):'—'}</span></div>
+      <div style="font-size:11px;color:var(--cream-muted);margin-top:8px">Placeholder register — actual SAR submissions via NCA SAR Online: nationalcrimeagency.gov.uk/sars</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>SAR log</h3>
+    <table><thead><tr><th>Filed</th><th>Subject</th><th>NCA ref</th><th>MLRO</th><th>Outcome</th></tr></thead><tbody>
+    ${state.sars.length?state.sars.map(s=>`<tr>
+      <td class="mono">${fmtDate(s.filedAt)}</td>
+      <td>${esc(s.subject||'')}</td>
+      <td class="mono">${esc(s.ncaRef||'')}</td>
+      <td>${esc(s.mlro||'')}</td>
+      <td>${esc(s.outcome||'')}</td>
+    </tr>`).join(''):'<tr><td colspan="5" class="empty">No SARs logged</td></tr>'}
+    </tbody></table>
+  </div>`;
+}
+
+// ────── CPD ──────
+function viewCPD(){
+  return `
+  <div class="section-h"><h2>CPD tracker</h2>
+    <div class="actions"><button class="btn sm primary" onclick="openModal('addCpd')">+ log CPD</button></div>
+  </div>
+  <div class="grid">
+    ${state.advisers.map(a=>{
+      const body=a.professionalBody||state.firm?.professionalBody||'ICAEW';
+      const target=body==='ICAEW'?RULES.icaewCpdHours:body==='ACCA'?RULES.accaCpdHours:RULES.cimaCpdHours;
+      const hrs=Number(a.cpdHoursThisYear)||0;
+      const pct=Math.min(100,(hrs/target)*100);
+      const cls=pct>=80?'green':pct>=50?'amber':'red';
+      const entries=state.cpdLog.filter(l=>l.adviserId===a.id);
+      return `<div class="card">
+        <h3>${esc(a.name)} <span class="meta">${body}</span></h3>
+        <div class="kpi"><span class="l">Annual target</span><span class="v">${target} hrs</span></div>
+        <div class="kpi"><span class="l">YTD hours</span><span class="v">${hrs.toFixed(1)}</span></div>
+        <div class="bar"><div class="${cls}" style="width:${pct}%"></div></div>
+        <div class="kpi"><span class="l">Activities logged</span><span class="v">${entries.length}</span></div>
+        <div class="kpi"><span class="l">Practising cert</span><span class="v ${a.practisingCert?.active?'green':'red'}">${a.practisingCert?.active?'ACTIVE':'INACTIVE'}</span></div>
+        ${a.practisingCert?.expiresAt?`<div class="kpi"><span class="l">PC expires</span><span class="v">${fmtDate(a.practisingCert.expiresAt)}</span></div>`:''}
+      </div>`;
+    }).join('')||'<div class="empty">No advisers</div>'}
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Recent CPD activities</h3>
+    <table><thead><tr><th>Date</th><th>Adviser</th><th>Activity</th><th class="r">Hours</th><th>Type</th></tr></thead><tbody>
+    ${state.cpdLog.length?[...state.cpdLog].sort((a,b)=>b.dateAt-a.dateAt).slice(0,20).map(l=>{
+      const a=state.advisers.find(x=>x.id===l.adviserId);
+      return `<tr>
+        <td class="mono">${fmtDate(l.dateAt)}</td>
+        <td>${esc(a?.name||'?')}</td>
+        <td>${esc(l.activity)}</td>
+        <td class="r">${l.hours}</td>
+        <td><span class="tag ${l.verifiable?'green':'muted'}">${l.verifiable?'verifiable':'reflective'}</span></td>
+      </tr>`;
+    }).join(''):'<tr><td colspan="5" class="empty">No CPD activities</td></tr>'}
+    </tbody></table>
+  </div>`;
+}
+
+// ────── ADVISERS ──────
+function viewAdvisers(){
+  return `
+  <div class="section-h"><h2>Advisers · per-adviser P&L</h2>
+    <div class="actions"><button class="btn sm primary" onclick="openModal('addAdviser')">+ adviser</button></div>
+  </div>
+  <div class="grid">
+  ${state.advisers.map(a=>{
+    const Y=new Date().getUTCFullYear();
+    const fees=state.feeRecords.filter(f=>f.adviserId===a.id);
+    const ytd=fees.filter(f=>new Date(f.recordedAt).getUTCFullYear()===Y).reduce((s,f)=>s+(Number(f.amount)||0),0);
+    const mtd=fees.filter(f=>{const d=new Date(f.recordedAt);return d.getUTCFullYear()===Y && d.getUTCMonth()===new Date().getUTCMonth()}).reduce((s,f)=>s+(Number(f.amount)||0),0);
+    const clients=state.clients.filter(c=>c.adviserId===a.id).length;
+    const timeMin=state.timeEntries.filter(t=>t.adviserId===a.id && new Date(t.recordedAt).getUTCFullYear()===Y).reduce((s,t)=>s+(t.minutes||0),0);
+    const billable=state.timeEntries.filter(t=>t.adviserId===a.id && t.billable).reduce((s,t)=>s+(t.minutes||0),0);
+    const realisation=timeMin?((billable/timeMin)*100).toFixed(0):'—';
+    return `<div class="card">
+      <h3>${esc(a.name)} <span class="meta">${esc(a.professionalBody||'')}</span></h3>
+      <div class="kpi"><span class="l">Status</span><span class="v ${a.status==='active'?'green':'red'}">${a.status}</span></div>
+      <div class="kpi"><span class="l">Hourly rate</span><span class="v">${fmtGBP(a.hourlyRate||0)}</span></div>
+      <div class="kpi"><span class="l">Clients</span><span class="v">${clients}</span></div>
+      <div class="kpi"><span class="l">Fees MTD</span><span class="v">${fmtGBP(mtd)}</span></div>
+      <div class="kpi"><span class="l">Fees YTD</span><span class="v brass">${fmtGBP(ytd)}</span></div>
+      <div class="kpi"><span class="l">Time YTD</span><span class="v">${(timeMin/60).toFixed(1)}h</span></div>
+      <div class="kpi"><span class="l">Realisation rate</span><span class="v">${realisation}%</span></div>
+      <div style="margin-top:10px"><button class="btn sm" onclick="editAdviser('${a.id}')">edit</button> <button class="btn sm danger" onclick="archiveAdviser('${a.id}')">archive</button></div>
+    </div>`;
+  }).join('')||'<div class="empty">No advisers</div>'}
+  </div>`;
+}
+async function archiveAdviser(aid){
+  if(!confirm('Archive adviser?'))return;
+  const a=state.advisers.find(x=>x.id===aid);a.status='left';a.leftAt=now();a.updatedAt=now();
+  await dbPut('advisers',a); meshSend('adviser.updated',a); await refreshState(); render();
+}
+
+// ────── FIRM P&L ──────
+function viewFirmPL(){
+  const Y=new Date().getUTCFullYear();
+  const feesYtd=state.feeRecords.filter(f=>new Date(f.recordedAt).getUTCFullYear()===Y).reduce((s,f)=>s+(Number(f.amount)||0),0);
+  const byType={};
+  state.feeRecords.filter(f=>new Date(f.recordedAt).getUTCFullYear()===Y).forEach(f=>{byType[f.type]=(byType[f.type]||0)+(Number(f.amount)||0)});
+
+  // Expenses YTD
+  const expYtd=state.expenses.filter(e=>new Date(e.dateAt).getUTCFullYear()===Y).reduce((s,e)=>s+(Number(e.amount)||0),0);
+  const byCat={};
+  state.expenses.filter(e=>new Date(e.dateAt).getUTCFullYear()===Y).forEach(e=>{byCat[e.category]=(byCat[e.category]||0)+(Number(e.amount)||0)});
+
+  // Accrued PI + body fees (monthly)
+  const monthsPassed=new Date().getUTCMonth()+1;
+  const piAccr=state.piPolicies.reduce((s,p)=>s+(Number(p.accrualMonthly)||0),0)*monthsPassed;
+  const bodyAccr=state.professionalBodyFees.reduce((s,p)=>s+(Number(p.accrualMonthly)||0),0)*monthsPassed;
+
+  const totalCosts=expYtd+piAccr+bodyAccr;
+  const net=feesYtd-totalCosts;
+
+  return `
+  <div class="section-h"><h2>Firm P&L · YTD ${Y}</h2>
+    <div class="actions">
+      <button class="btn sm primary" onclick="openModal('addExpense')">+ expense</button>
+      <button class="btn sm" onclick="openModal('addBodyFee')">+ body fee</button>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Revenue</h3>
+      ${FEE_TYPES.map(t=>`<div class="kpi"><span class="l">${t}</span><span class="v">${fmtGBP(byType[t]||0)}</span></div>`).join('')}
+      <div class="kpi"><span class="l"><strong>Total fees</strong></span><span class="v brass"><strong>${fmtGBP(feesYtd)}</strong></span></div>
+    </div>
+    <div class="card">
+      <h3>Costs · YTD accrued</h3>
+      ${Object.entries(byCat).map(([c,v])=>`<div class="kpi"><span class="l">${c}</span><span class="v">${fmtGBP(v)}</span></div>`).join('')}
+      <div class="kpi"><span class="l">PII accrual (${monthsPassed}m)</span><span class="v">${fmtGBP(piAccr)}</span></div>
+      <div class="kpi"><span class="l">Body fees accrual (${monthsPassed}m)</span><span class="v">${fmtGBP(bodyAccr)}</span></div>
+      <div class="kpi"><span class="l"><strong>Total costs</strong></span><span class="v red"><strong>${fmtGBP(totalCosts)}</strong></span></div>
+    </div>
+    <div class="card">
+      <h3>Net firm profit</h3>
+      <div class="kpi"><span class="l">Revenue YTD</span><span class="v">${fmtGBP(feesYtd)}</span></div>
+      <div class="kpi"><span class="l">Costs YTD</span><span class="v red">−${fmtGBP(totalCosts)}</span></div>
+      <div class="kpi" style="border-top:1px solid var(--brass);padding-top:8px;margin-top:4px"><span class="l"><strong>Net</strong></span><span class="v ${net>=0?'green':'red'}"><strong>${fmtGBP(net)}</strong></span></div>
+      <div class="kpi"><span class="l">Margin</span><span class="v">${feesYtd?((net/feesYtd)*100).toFixed(1)+'%':'—'}</span></div>
+    </div>
+    <div class="card">
+      <h3>Professional body fees</h3>
+      ${state.professionalBodyFees.length?state.professionalBodyFees.map(p=>`<div class="kpi"><span class="l">${esc(p.body)} · ${esc(p.category)}</span><span class="v">${fmtGBP(p.amount)}/yr</span></div>`).join(''):'<div class="empty">No body fees logged</div>'}
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Expenses</h3>
+    <table><thead><tr><th>Date</th><th>Category</th><th>Description</th><th class="r">Amount</th><th></th></tr></thead><tbody>
+    ${state.expenses.length?[...state.expenses].sort((a,b)=>b.dateAt-a.dateAt).slice(0,30).map(e=>`<tr>
+      <td class="mono">${fmtDate(e.dateAt)}</td>
+      <td><span class="tag">${esc(e.category)}</span></td>
+      <td>${esc(e.description||'')}</td>
+      <td class="r">${fmtGBP(e.amount)}</td>
+      <td class="r"><button class="btn sm danger" onclick="deleteExpense('${e.id}')">×</button></td>
+    </tr>`).join(''):'<tr><td colspan="5" class="empty">No expenses</td></tr>'}
+    </tbody></table>
+  </div>`;
+}
+async function deleteExpense(id_){if(!confirm('Delete?'))return; await dbDel('expenses',id_); await refreshState(); render();}
+
+// ────── Q&A ──────
+let chatHist=[];
+function viewQA(){
+  return `
+  <div class="section-h"><h2>Q&amp;A</h2><div class="sub">T0 offline · ${T0.length} canned rules · T3 BYOK optional</div></div>
+  <div class="card">
+    <div class="chat" id="chat">
+    ${chatHist.length?chatHist.map(m=>`<div class="msg ${m.role}">${esc(m.text)}${m.src?`<div class="src">${esc(m.src)}</div>`:''}</div>`).join(''):
+      '<div class="empty">Ask about ICAEW PII, ACCA PII, CPD, AML supervisor, 64-8, retention, engagement letters, SAR thresholds, risk assessment cadence …</div>'}
+    </div>
+    <div class="chat-input">
+      <input type="text" id="qInput" placeholder="ask a question …" onkeydown="if(event.key==='Enter')askQA()">
+      <button class="btn primary" onclick="askQA()">ask</button>
+    </div>
+  </div>`;
+}
+async function askQA(){
+  const inp=document.getElementById('qInput'); const q=inp.value.trim(); if(!q)return;
+  chatHist.push({role:'user',text:q}); inp.value='';
+  const hit=T0.find(r=>r.q.test(q));
+  if(hit){
+    chatHist.push({role:'bot',text:hit.a,src:'T0 canned rule'});
+  } else if(state.settings.tier==='T3' && state.settings.apiKey){
+    chatHist.push({role:'bot',text:'(T3 BYOK · would dispatch to Claude API here)',src:'T3'});
+  } else {
+    chatHist.push({role:'bot',text:`No canned rule matched. Try keywords: ICAEW, ACCA, PII, CPD, AML, 64-8, retention, engagement, SAR, risk.\n\nUpgrade to T3 (settings · paste Anthropic API key) for arbitrary research.`,src:'T0 fallback'});
+  }
+  render();
+  setTimeout(()=>{const c=document.getElementById('chat');if(c)c.scrollTop=c.scrollHeight},50);
+}
+
+// ════════════════════════════════════════════════════════════════
+// Palette
+// ════════════════════════════════════════════════════════════════
+function openPalette(){document.getElementById('palette').classList.add('open');document.getElementById('pInput').focus();document.getElementById('pTier').textContent=state.settings.tier||'T0'}
+function closePalette(){document.getElementById('palette').classList.remove('open');document.getElementById('pInput').value='';document.getElementById('pBody').innerHTML=''}
+function runQuery(q){
+  if(!q.trim())return;
+  const hit=T0.find(r=>r.q.test(q));
+  const body=document.getElementById('pBody');
+  if(hit){body.innerHTML=`<div class="msg bot" style="margin:0">${esc(hit.a)}<div class="src">T0 canned</div></div>`}
+  else{body.innerHTML=`<div class="msg bot" style="margin:0">No canned answer. Try: ICAEW PII, ACCA PII, CPD, AML supervisor, 64-8, retention, engagement, SAR, risk assessment.<div class="src">T0 fallback</div></div>`}
+}
+
+// ════════════════════════════════════════════════════════════════
+// Modals
+// ════════════════════════════════════════════════════════════════
+function openModal(kind,arg){
+  const m=document.getElementById('modal');
+  const t=document.getElementById('modalTitle');
+  const b=document.getElementById('modalBody');
+  m.classList.add('open');
+  const M={settings:modalSettings,addClient:modalAddClient,addDeadline:modalAddDeadline,addTime:modalAddTime,addFee:modalAddFee,generateInvoice:modalGenerateInvoice,addAgentAuth:modalAddAgentAuth,addPi:modalAddPi,addSAR:modalAddSAR,amlReview:modalAmlReview,addCpd:modalAddCpd,addAdviser:modalAddAdviser,addExpense:modalAddExpense,addBodyFee:modalAddBodyFee,editClient:modalEditClient,editAdviser:modalEditAdviser,viewInvoice:modalViewInvoice}[kind];
+  if(!M){closeModal();return}
+  const r=M(arg);
+  t.textContent=r.title; b.innerHTML=r.body;
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+
+function editClient(cid){openModal('editClient',cid)}
+function editAdviser(aid){openModal('editAdviser',aid)}
+
+// SETTINGS
+function modalSettings(){
+  return {title:'Settings · firm · tier',body:`
+  <div class="row">
+    <div class="field"><label>firm name</label><input id="s_name" value="${esc(state.firm?.name||'')}"></div>
+    <div class="field"><label>professional body</label><select id="s_body">${PROF_BODIES.map(b=>`<option value="${b}" ${state.firm?.professionalBody===b?'selected':''}>${b}</option>`).join('')}</select></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>HMRC agent ref</label><input id="s_hmrc" value="${esc(state.firm?.hmrcAgentRef||'')}"></div>
+    <div class="field"><label>practising cert no</label><input id="s_pc" value="${esc(state.firm?.practiceCertNo||'')}"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>AML supervisor</label><select id="s_aml">${['HMRC',...PROF_BODIES].map(b=>`<option value="${b}" ${state.firm?.amlSupervisor===b?'selected':''}>${b}</option>`).join('')}</select></div>
+    <div class="field"><label>AML supervisor ref</label><input id="s_amlref" value="${esc(state.firm?.amlSupervisorRef||'')}"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>VAT number</label><input id="s_vat" value="${esc(state.firm?.vatNumber||'')}"></div>
+    <div class="field"><label>Companies House no</label><input id="s_ch" value="${esc(state.firm?.companiesHouseNo||'')}"></div>
+  </div>
+  <hr style="border:none;border-top:1px solid var(--line);margin:14px 0">
+  <div class="row">
+    <div class="field"><label>tier</label><select id="s_tier"><option value="T0" ${state.settings.tier==='T0'?'selected':''}>T0 (offline)</option><option value="T3" ${state.settings.tier==='T3'?'selected':''}>T3 (BYOK Claude)</option></select></div>
+    <div class="field"><label>Anthropic API key (BYOK)</label><input id="s_key" type="password" value="${esc(state.settings.apiKey||'')}" placeholder="sk-ant-..."></div>
+  </div>
+  <hr style="border:none;border-top:1px solid var(--line);margin:14px 0">
+  <div class="row">
+    <div class="field"><button class="btn" onclick="exportData()">↓ export all data (JSON)</button></div>
+    <div class="field"><button class="btn danger" onclick="if(confirm('Wipe ALL data? Irreversible.'))wipeData()">⚠ wipe data</button></div>
+  </div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveSettings()">save</button></div>`}
+}
+async function saveSettings(){
+  const get=k=>document.getElementById(k)?.value||'';
+  if(!state.firm)state.firm={id:id('fm'),createdAt:now(),registeredAddress:{}};
+  Object.assign(state.firm,{name:get('s_name'),professionalBody:get('s_body'),hmrcAgentRef:get('s_hmrc'),practiceCertNo:get('s_pc'),amlSupervisor:get('s_aml'),amlSupervisorRef:get('s_amlref'),vatNumber:get('s_vat'),companiesHouseNo:get('s_ch'),updatedAt:now()});
+  await dbPut('firms',state.firm); meshSend('firm.updated',state.firm);
+  state.settings.tier=get('s_tier'); state.settings.apiKey=get('s_key');
+  await dbPut('settings',{id:'settings',...state.settings});
+  document.getElementById('tierBadge').textContent=state.settings.tier;
+  await appendAudit('settings.saved','User saved firm + tier');
+  closeModal(); await refreshState(); render(); toast('Saved');
+}
+async function exportData(){
+  const dump={tool:TOOLNAME,version:VERSION,exportedAt:now(),firm:state.firm,advisers:state.advisers,clients:state.clients,deadlines:state.deadlines,timeEntries:state.timeEntries,invoices:state.invoices,feeRecords:state.feeRecords,hmrcAgentAuths:state.hmrcAgentAuths,piPolicies:state.piPolicies,professionalBodyFees:state.professionalBodyFees,expenses:state.expenses,sars:state.sars,cpdLog:state.cpdLog,audit:await dbAll('audit'),settings:state.settings};
+  const blob=new Blob([JSON.stringify(dump,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`${TOOLNAME}-export-${tsToISO(now())}.json`; a.click();
+  toast('Export downloaded');
+}
+async function wipeData(){
+  for(const s of IDB_STORES){const all=await dbAll(s); for(const r of all)await dbDel(s,r.id);}
+  location.reload();
+}
+
+// ADD CLIENT
+function modalAddClient(){
+  return {title:'Add client',body:`
+  <div class="row">
+    <div class="field"><label>entity type</label><select id="c_type">
+      <option value="limited-company">Limited Company</option>
+      <option value="sole-trader">Sole Trader</option>
+      <option value="partnership">Partnership</option>
+      <option value="llp">LLP</option>
+      <option value="charity">Charity</option>
+      <option value="trust">Trust</option>
+    </select></div>
+    <div class="field"><label>name / entity name</label><input id="c_name"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>year-end (MM-DD)</label><input id="c_ye" value="03-31"></div>
+    <div class="field"><label>VAT scheme</label><select id="c_vat">
+      <option value="none">none</option><option value="standard">standard</option><option value="flat-rate">flat rate</option><option value="cash">cash</option><option value="annual">annual</option><option value="margin">margin</option>
+    </select></div>
+  </div>
+  <div class="row3">
+    <div class="field"><label>Companies House no</label><input id="c_ch"></div>
+    <div class="field"><label>CT UTR</label><input id="c_ctutr"></div>
+    <div class="field"><label>VAT no</label><input id="c_vatno"></div>
+  </div>
+  <div class="field"><label>services engaged (tick)</label>
+    <div>${['accounts','ct','vat','sa','payroll','tax-planning','bookkeeping','companies-house-filings'].map(s=>`<label class="cls"><input type="checkbox" value="${s}" class="c_svc"> ${s}</label>`).join('')}</div>
+  </div>
+  <div class="row3">
+    <div class="field"><label>adviser</label><select id="c_adv">${state.advisers.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('')}</select></div>
+    <div class="field"><label>fee basis</label><select id="c_fb">${['fixed-monthly','fixed-annual','hourly','per-job'].map(f=>`<option value="${f}">${f}</option>`).join('')}</select></div>
+    <div class="field"><label>fee amount £</label><input id="c_fa" type="number" value="0" step="0.01"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>KYC status</label><select id="c_kyc"><option value="pending">pending</option><option value="verified">verified</option><option value="review">review</option></select></div>
+    <div class="field"><label>risk grade</label><select id="c_rg"><option value="low">low</option><option value="medium">medium</option><option value="high">high</option></select></div>
+  </div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveClient()">save + auto-populate deadlines</button></div>`};
+}
+async function saveClient(){
+  const get=k=>document.getElementById(k)?.value||'';
+  const services=[...document.querySelectorAll('.c_svc:checked')].map(x=>x.value);
+  const c={id:id('cl'),firmId:state.firm?.id||'',ts:now(),updatedAt:now(),archivedAt:null,
+    entityType:get('c_type'),entityName:get('c_name'),firstName:get('c_type')==='sole-trader'?get('c_name').split(' ')[0]:'',lastName:get('c_type')==='sole-trader'?get('c_name').split(' ').slice(1).join(' '):'',
+    yearEnd:get('c_ye'),vatScheme:get('c_vat'),companiesHouseNo:get('c_ch'),ctUtr:get('c_ctutr'),vatNumber:get('c_vatno'),
+    servicesEngaged:services,
+    adviserId:get('c_adv'),
+    engagement:{startedAt:now(),type:'ongoing',feeBasis:get('c_fb'),feeAmount:Number(get('c_fa'))||0,feeFrequency:get('c_fb')==='fixed-monthly'?'monthly':'annual',nextReviewDue:now()+365*86400000,letterOfEngagementHash:'',letterOfEngagementSignedAt:null},
+    kyc:{status:get('c_kyc'),riskGrade:get('c_rg'),pepFlag:false,sanctionsStatus:'not-checked',sourceOfFundsForServices:'',natureAndPurposeOfBusiness:'',expectedTransactionPatterns:'',documentsHeld:[],amlSupervisor:state.firm?.amlSupervisor||'HMRC',amlSupervisorRef:'',lastReviewAt:now(),nextReviewDue:now()+365*86400000},
+    deadlines:[],beneficialOwners:[],pscFromCompaniesHouse:[]};
+  await dbPut('clients',c); meshSend('client.created',c);
+  const dls=deriveDeadlinesForClient(c);
+  for(const d of dls)await dbPut('deadlines',d);
+  for(const d of dls)meshSend('deadline.created',d);
+  await appendAudit('client.created',`Created client + ${dls.length} deadlines`,{name:c.entityName,services},'',c.id);
+  closeModal(); await refreshState(); render(); toast(`Client added + ${dls.length} deadlines`);
+}
+
+// EDIT CLIENT
+function modalEditClient(cid){
+  const c=state.clients.find(x=>x.id===cid); if(!c)return {title:'?',body:''};
+  return {title:'Edit · '+(c.entityName||c.lastName),body:`
+  <div class="row">
+    <div class="field"><label>entity name</label><input id="ec_name" value="${esc(c.entityName||'')}"></div>
+    <div class="field"><label>year-end</label><input id="ec_ye" value="${esc(c.yearEnd||'')}"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>fee basis</label><select id="ec_fb">${['fixed-monthly','fixed-annual','hourly','per-job'].map(f=>`<option value="${f}" ${c.engagement?.feeBasis===f?'selected':''}>${f}</option>`).join('')}</select></div>
+    <div class="field"><label>fee amount £</label><input id="ec_fa" type="number" value="${c.engagement?.feeAmount||0}"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>KYC status</label><select id="ec_kyc">${['pending','verified','review','failed'].map(s=>`<option value="${s}" ${c.kyc?.status===s?'selected':''}>${s}</option>`).join('')}</select></div>
+    <div class="field"><label>risk grade</label><select id="ec_rg">${['low','medium','high'].map(s=>`<option value="${s}" ${c.kyc?.riskGrade===s?'selected':''}>${s}</option>`).join('')}</select></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>PEP flag</label><select id="ec_pep"><option value="false" ${!c.kyc?.pepFlag?'selected':''}>No</option><option value="true" ${c.kyc?.pepFlag?'selected':''}>Yes</option></select></div>
+    <div class="field"><label>sanctions status</label><select id="ec_san">${['not-checked','clear','match','review'].map(s=>`<option value="${s}" ${c.kyc?.sanctionsStatus===s?'selected':''}>${s}</option>`).join('')}</select></div>
+  </div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveEditClient('${cid}')">save</button></div>`};
+}
+async function saveEditClient(cid){
+  const c=state.clients.find(x=>x.id===cid);
+  c.entityName=document.getElementById('ec_name').value;
+  c.yearEnd=document.getElementById('ec_ye').value;
+  c.engagement.feeBasis=document.getElementById('ec_fb').value;
+  c.engagement.feeAmount=Number(document.getElementById('ec_fa').value)||0;
+  c.kyc.status=document.getElementById('ec_kyc').value;
+  c.kyc.riskGrade=document.getElementById('ec_rg').value;
+  c.kyc.pepFlag=document.getElementById('ec_pep').value==='true';
+  c.kyc.sanctionsStatus=document.getElementById('ec_san').value;
+  c.updatedAt=now();
+  await dbPut('clients',c); meshSend('client.updated',c);
+  await appendAudit('client.updated','User edit',{},'',cid);
+  closeModal(); await refreshState(); render(); toast('Saved');
+}
+
+// ADD DEADLINE
+function modalAddDeadline(){
+  return {title:'Add deadline',body:`
+  <div class="row">
+    <div class="field"><label>client</label><select id="d_cli">${state.clients.map(c=>`<option value="${c.id}">${esc(c.entityName||c.lastName||'?')}</option>`).join('')}</select></div>
+    <div class="field"><label>kind</label><select id="d_kind">${Object.keys(DEADLINE_KINDS).map(k=>`<option value="${k}">${k} · ${DEADLINE_KINDS[k].label}</option>`).join('')}</select></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>due date</label><input id="d_due" type="date"></div>
+    <div class="field"><label>notes</label><input id="d_notes"></div>
+  </div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveDeadline()">save</button></div>`};
+}
+async function saveDeadline(){
+  const d={id:id('dl'),clientId:document.getElementById('d_cli').value,firmId:state.firm?.id||'',
+    kind:document.getElementById('d_kind').value,dueAt:isoToTs(document.getElementById('d_due').value),
+    status:'pending',submittedAt:null,submissionRef:'',notes:document.getElementById('d_notes').value,
+    recurring:DEADLINE_KINDS[document.getElementById('d_kind').value]?.recurring||'',createdAt:now(),updatedAt:now()};
+  await dbPut('deadlines',d); meshSend('deadline.created',d);
+  await appendAudit('deadline.created','Manual deadline',{kind:d.kind},'',d.clientId);
+  closeModal(); await refreshState(); render(); toast('Deadline added');
+}
+
+// ADD TIME
+function modalAddTime(){
+  return {title:'Log time',body:`
+  <div class="row">
+    <div class="field"><label>client</label><select id="t_cli">${state.clients.map(c=>`<option value="${c.id}">${esc(c.entityName||c.lastName||'?')}</option>`).join('')}</select></div>
+    <div class="field"><label>adviser</label><select id="t_adv">${state.advisers.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('')}</select></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>activity</label><select id="t_act">${ACTIVITY_TYPES.map(a=>`<option value="${a}">${a}</option>`).join('')}</select></div>
+    <div class="field"><label>units (1u = 6 min)</label><input id="t_units" type="number" value="1" min="1"></div>
+  </div>
+  <div class="field"><label>narrative</label><textarea id="t_narr" rows="2"></textarea></div>
+  <div class="field"><label><input type="checkbox" id="t_bill" checked> billable</label></div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveTime()">save</button></div>`};
+}
+async function saveTime(){
+  const units=Number(document.getElementById('t_units').value)||1;
+  const t={id:id('te'),clientId:document.getElementById('t_cli').value,adviserId:document.getElementById('t_adv').value,
+    firmId:state.firm?.id||'',activity:document.getElementById('t_act').value,
+    units,minutes:units*RULES.timeUnitMinutes,narrative:document.getElementById('t_narr').value,
+    billable:document.getElementById('t_bill').checked,billedRef:'',recordedAt:now(),ts:now()};
+  await dbPut('timeEntries',t);
+  await appendAudit('time.logged',`${t.activity} ${t.minutes}min`,{},t.adviserId,t.clientId);
+  closeModal(); await refreshState(); render(); toast('Time logged');
+}
+
+// ADD FEE
+function modalAddFee(){
+  return {title:'Record fee',body:`
+  <div class="row">
+    <div class="field"><label>client</label><select id="f_cli">${state.clients.map(c=>`<option value="${c.id}">${esc(c.entityName||c.lastName||'?')}</option>`).join('')}</select></div>
+    <div class="field"><label>adviser</label><select id="f_adv">${state.advisers.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('')}</select></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>type</label><select id="f_type">${FEE_TYPES.map(t=>`<option value="${t}">${t}</option>`).join('')}</select></div>
+    <div class="field"><label>amount £</label><input id="f_amt" type="number" step="0.01"></div>
+  </div>
+  <div class="field"><label>narrative</label><textarea id="f_narr" rows="2"></textarea></div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveFee()">save</button></div>`};
+}
+async function saveFee(){
+  const f={id:id('fr'),clientId:document.getElementById('f_cli').value,adviserId:document.getElementById('f_adv').value,
+    firmId:state.firm?.id||'',type:document.getElementById('f_type').value,
+    amount:Number(document.getElementById('f_amt').value)||0,narrative:document.getElementById('f_narr').value,
+    invoiceId:'',recordedAt:now(),ts:now()};
+  await dbPut('feeRecords',f); meshSend('fee.recorded',f);
+  await appendAudit('fee.recorded',f.type,{amt:f.amount},f.adviserId,f.clientId);
+  closeModal(); await refreshState(); render(); toast('Fee recorded');
+}
+
+// GENERATE INVOICE
+function modalGenerateInvoice(){
+  return {title:'Generate invoice',body:`
+  <div class="field"><label>client</label><select id="i_cli">${state.clients.map(c=>`<option value="${c.id}">${esc(c.entityName||c.lastName||'?')}</option>`).join('')}</select></div>
+  <div class="field"><label>unbilled period from</label><input id="i_from" type="date"></div>
+  <div class="field"><label>also include WIP time?</label><select id="i_wip"><option value="yes">yes</option><option value="no">no</option></select></div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="generateInvoice()">generate</button></div>`};
+}
+async function generateInvoice(){
+  const clientId=document.getElementById('i_cli').value;
+  const from=isoToTs(document.getElementById('i_from').value)||(now()-90*86400000);
+  const includeWip=document.getElementById('i_wip').value==='yes';
+  const c=state.clients.find(x=>x.id===clientId);
+  const fees=state.feeRecords.filter(f=>f.clientId===clientId && !f.invoiceId && f.recordedAt>=from);
+  let wipLines=[];
+  if(includeWip){
+    const time=state.timeEntries.filter(t=>t.clientId===clientId && t.billable && !t.billedRef);
+    const grouped={};
+    time.forEach(t=>{const a=state.advisers.find(x=>x.id===t.adviserId);const rate=a?.hourlyRate||120;
+      grouped[t.activity]=grouped[t.activity]||{min:0,value:0,rate};
+      grouped[t.activity].min+=t.minutes; grouped[t.activity].value+=t.minutes/60*rate;});
+    wipLines=Object.entries(grouped).map(([act,d])=>({desc:`${act} · ${(d.min/60).toFixed(2)}h @ £${d.rate}/h`,amount:d.value}));
+  }
+  const lines=[...fees.map(f=>({desc:f.narrative||f.type,amount:f.amount})),...wipLines];
+  const subtotal=lines.reduce((s,l)=>s+l.amount,0);
+  const vat=state.firm?.vatNumber?subtotal*RULES.vatStandard:0;
+  const total=subtotal+vat;
+  const num='INV-'+new Date().getUTCFullYear()+'-'+String(state.invoices.length+1).padStart(4,'0');
+  const inv={id:id('inv'),number:num,clientId,firmId:state.firm?.id||'',
+    issuedAt:now(),dueAt:now()+RULES.invoiceTermsDays*86400000,
+    lines,subtotal,vat,total,status:'issued'};
+  await dbPut('invoices',inv);
+  // mark linked
+  for(const f of fees){f.invoiceId=inv.id;await dbPut('feeRecords',f);}
+  if(includeWip){
+    for(const t of state.timeEntries.filter(t=>t.clientId===clientId && t.billable && !t.billedRef)){
+      t.billedRef=inv.id;await dbPut('timeEntries',t);
+    }
+  }
+
+  // Markdown
+  const md=`# Invoice ${num}
+
+**From:** ${state.firm?.name||''}\n**To:** ${c?.entityName||c?.lastName||''}
+**Issued:** ${fmtDate(inv.issuedAt)} · **Due:** ${fmtDate(inv.dueAt)}
+
+| Description | Amount |
+|---|---:|
+${lines.map(l=>`| ${l.desc} | ${fmtGBP(l.amount)} |`).join('\n')}
+| **Subtotal** | **${fmtGBP(subtotal)}** |
+| VAT @ 20% | ${fmtGBP(vat)} |
+| **Total** | **${fmtGBP(total)}** |
+
+Payment terms: ${RULES.invoiceTermsDays} days.
+${state.firm?.vatNumber?'VAT Reg: '+state.firm.vatNumber:''}
+`;
+  // Handoff to FallBooksPaper via postMessage
+  try{
+    if(bcBooks)bcBooks.postMessage({v:1,type:'invoice.draft',ts:now(),source:TOOLNAME,payload:{invoice:inv,markdown:md,client:c}});
+  }catch(e){}
+
+  await appendAudit('invoice.generated',num,{total,lines:lines.length},'',clientId);
+  closeModal(); await refreshState();
+  // Show markdown for download
+  const m=document.getElementById('modal');
+  const t=document.getElementById('modalTitle');
+  const b=document.getElementById('modalBody');
+  m.classList.add('open');
+  t.textContent=num;
+  b.innerHTML=`<pre style="background:var(--ink);padding:12px;border-radius:3px;font-family:var(--mono);font-size:11px;white-space:pre-wrap;max-height:50vh;overflow:auto">${esc(md)}</pre>
+  <div class="actions">
+    <button class="btn" onclick="navigator.clipboard.writeText(\`${md.replace(/`/g,'\\`').replace(/\$/g,'\\$')}\`).then(()=>toast('Copied'))">copy MD</button>
+    <button class="btn primary" onclick="downloadInvoice('${inv.id}')">↓ download .md</button>
+    <button class="btn" onclick="closeModal()">close</button>
+  </div>`;
+  toast('Invoice '+num+' generated');
+}
+async function downloadInvoice(invId){
+  const inv=state.invoices.find(x=>x.id===invId); const c=state.clients.find(x=>x.id===inv.clientId);
+  const md=`# Invoice ${inv.number}\n\nFrom: ${state.firm?.name||''}\nTo: ${c?.entityName||''}\nTotal: ${fmtGBP(inv.total)}\n\n${inv.lines.map(l=>`- ${l.desc}: ${fmtGBP(l.amount)}`).join('\n')}`;
+  const blob=new Blob([md],{type:'text/markdown'}); const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download=`${inv.number}.md`; a.click();
+}
+
+// ADD AGENT AUTH
+function modalAddAgentAuth(){
+  return {title:'Add HMRC agent authorisation',body:`
+  <div class="row">
+    <div class="field"><label>client</label><select id="aa_cli">${state.clients.map(c=>`<option value="${c.id}">${esc(c.entityName||c.lastName||'?')}</option>`).join('')}</select></div>
+    <div class="field"><label>service</label><select id="aa_svc"><option>SA</option><option>CT</option><option>VAT</option><option>PAYE</option><option>CIS</option></select></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>64-8 / authorisation date</label><input id="aa_date" type="date"></div>
+    <div class="field"><label>review due</label><input id="aa_rev" type="date"></div>
+  </div>
+  <div class="field"><label>notes</label><input id="aa_notes"></div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveAgentAuth()">save</button></div>`};
+}
+async function saveAgentAuth(){
+  const a={id:id('aa'),clientId:document.getElementById('aa_cli').value,firmId:state.firm?.id||'',
+    service:document.getElementById('aa_svc').value,authDate:isoToTs(document.getElementById('aa_date').value)||now(),
+    reviewDue:isoToTs(document.getElementById('aa_rev').value)||(now()+5*365*86400000),status:'active',
+    notes:document.getElementById('aa_notes').value,createdAt:now()};
+  await dbPut('hmrcAgentAuths',a);
+  await appendAudit('hmrc.auth.added',a.service,{},'',a.clientId);
+  closeModal(); await refreshState(); render(); toast('Auth added');
+}
+
+// ADD PI
+function modalAddPi(){
+  const cur=state.piPolicies[0]||{};
+  return {title:'PI policy',body:`
+  <div class="row">
+    <div class="field"><label>insurer</label><input id="pi_ins" value="${esc(cur.insurer||'')}"></div>
+    <div class="field"><label>policy no</label><input id="pi_no" value="${esc(cur.policyNo||'')}"></div>
+  </div>
+  <div class="row3">
+    <div class="field"><label>annual premium £</label><input id="pi_prem" type="number" value="${cur.premium||0}"></div>
+    <div class="field"><label>single-claim cover £</label><input id="pi_sc" type="number" value="${cur.coverSingle||0}"></div>
+    <div class="field"><label>aggregate cover £</label><input id="pi_agg" type="number" value="${cur.coverAggregate||0}"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>inception</label><input id="pi_inc" type="date" value="${tsToISO(cur.inceptionAt)}"></div>
+    <div class="field"><label>expiry</label><input id="pi_exp" type="date" value="${tsToISO(cur.expiresAt)}"></div>
+  </div>
+  <div class="field"><label>notes</label><input id="pi_notes" value="${esc(cur.notes||'')}"></div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="savePi('${cur.id||''}')">save</button></div>`};
+}
+async function savePi(idArg){
+  const prem=Number(document.getElementById('pi_prem').value)||0;
+  const p={id:idArg||id('pi'),firmId:state.firm?.id||'',
+    insurer:document.getElementById('pi_ins').value,policyNo:document.getElementById('pi_no').value,
+    premium:prem,coverSingle:Number(document.getElementById('pi_sc').value)||0,coverAggregate:Number(document.getElementById('pi_agg').value)||0,
+    inceptionAt:isoToTs(document.getElementById('pi_inc').value),expiresAt:isoToTs(document.getElementById('pi_exp').value),
+    accrualMonthly:Math.round(prem/12*100)/100,notes:document.getElementById('pi_notes').value};
+  // update firm pointer
+  if(state.firm){state.firm.piInsurer=p.insurer;state.firm.piPolicyNo=p.policyNo;state.firm.piExpiresAt=p.expiresAt;state.firm.updatedAt=now();await dbPut('firms',state.firm);}
+  await dbPut('piPolicies',p);
+  await appendAudit('pi.updated',p.policyNo,{prem,cover:p.coverSingle});
+  closeModal(); await refreshState(); render(); toast('PI saved');
+}
+
+// ADD SAR
+function modalAddSAR(){
+  return {title:'Log SAR (Suspicious Activity Report)',body:`
+  <div class="row">
+    <div class="field"><label>filed date</label><input id="sr_d" type="date" value="${tsToISO(now())}"></div>
+    <div class="field"><label>MLRO</label><input id="sr_mlro"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>subject (client)</label><input id="sr_sub"></div>
+    <div class="field"><label>NCA reference</label><input id="sr_nca"></div>
+  </div>
+  <div class="field"><label>outcome / status</label><input id="sr_out" placeholder="awaiting consent / DAML / closed"></div>
+  <div class="field"><label>notes</label><textarea id="sr_notes" rows="2"></textarea></div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveSAR()">save</button></div>`};
+}
+async function saveSAR(){
+  const s={id:id('sar'),firmId:state.firm?.id||'',filedAt:isoToTs(document.getElementById('sr_d').value)||now(),
+    mlro:document.getElementById('sr_mlro').value,subject:document.getElementById('sr_sub').value,
+    ncaRef:document.getElementById('sr_nca').value,outcome:document.getElementById('sr_out').value,
+    notes:document.getElementById('sr_notes').value};
+  await dbPut('sars',s);
+  await appendAudit('sar.logged',s.ncaRef||'(no ref)',{});
+  closeModal(); await refreshState(); render(); toast('SAR logged');
+}
+
+// AML REVIEW
+function modalAmlReview(){
+  return {title:'Annual AML review',body:`
+  <p style="font-size:13px;color:var(--cream-dim);margin-bottom:12px">Record completion of firm-wide AML risk assessment review (MLR 2017 reg 18).</p>
+  <div class="row">
+    <div class="field"><label>review date</label><input id="ar_d" type="date" value="${tsToISO(now())}"></div>
+    <div class="field"><label>reviewer</label><input id="ar_who"></div>
+  </div>
+  <div class="field"><label>findings / changes</label><textarea id="ar_find" rows="4" placeholder="Risk grades reviewed, FWRA updates, training delivered…"></textarea></div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveAmlReview()">commit to audit chain</button></div>`};
+}
+async function saveAmlReview(){
+  await appendAudit('aml.annual.review','Firm-wide AML review',{
+    reviewedAt:isoToTs(document.getElementById('ar_d').value),
+    reviewer:document.getElementById('ar_who').value,
+    findings:document.getElementById('ar_find').value});
+  closeModal(); toast('Review logged to audit chain');
+}
+
+// ADD CPD
+function modalAddCpd(){
+  return {title:'Log CPD activity',body:`
+  <div class="row">
+    <div class="field"><label>adviser</label><select id="cp_adv">${state.advisers.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('')}</select></div>
+    <div class="field"><label>date</label><input id="cp_d" type="date" value="${tsToISO(now())}"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>activity</label><input id="cp_act" placeholder="ICAEW tax update webinar"></div>
+    <div class="field"><label>hours</label><input id="cp_hrs" type="number" step="0.25"></div>
+  </div>
+  <div class="field"><label>verifiable?</label><select id="cp_v"><option value="true">verifiable (certificate/CPE)</option><option value="false">reflective</option></select></div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveCpd()">save</button></div>`};
+}
+async function saveCpd(){
+  const aid=document.getElementById('cp_adv').value;
+  const hrs=Number(document.getElementById('cp_hrs').value)||0;
+  const l={id:id('cpd'),adviserId:aid,firmId:state.firm?.id||'',
+    dateAt:isoToTs(document.getElementById('cp_d').value)||now(),
+    activity:document.getElementById('cp_act').value,hours:hrs,
+    verifiable:document.getElementById('cp_v').value==='true'};
+  await dbPut('cpdLog',l);
+  const a=state.advisers.find(x=>x.id===aid);
+  if(a){a.cpdHoursThisYear=(Number(a.cpdHoursThisYear)||0)+hrs;a.updatedAt=now();await dbPut('advisers',a);meshSend('adviser.updated',a);}
+  await appendAudit('cpd.logged',l.activity,{hrs},aid);
+  closeModal(); await refreshState(); render(); toast('CPD logged');
+}
+
+// ADD ADVISER
+function modalAddAdviser(){
+  return {title:'Add adviser',body:`
+  <div class="row">
+    <div class="field"><label>name</label><input id="ad_n"></div>
+    <div class="field"><label>email</label><input id="ad_e"></div>
+  </div>
+  <div class="row3">
+    <div class="field"><label>body</label><select id="ad_pb">${PROF_BODIES.map(b=>`<option value="${b}">${b}</option>`).join('')}</select></div>
+    <div class="field"><label>membership no</label><input id="ad_mn"></div>
+    <div class="field"><label>hourly rate £</label><input id="ad_hr" type="number" value="120"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>practising cert active?</label><select id="ad_pca"><option value="true">Yes</option><option value="false">No</option></select></div>
+    <div class="field"><label>PC expires</label><input id="ad_pce" type="date"></div>
+  </div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveAdviser()">save</button></div>`};
+}
+async function saveAdviser(){
+  const a={id:id('ad'),firmId:state.firm?.id||'',createdAt:now(),updatedAt:now(),archivedAt:null,
+    name:document.getElementById('ad_n').value,email:document.getElementById('ad_e').value,phone:'',
+    professionalBody:document.getElementById('ad_pb').value,membershipNo:document.getElementById('ad_mn').value,
+    practisingCert:{active:document.getElementById('ad_pca').value==='true',expiresAt:isoToTs(document.getElementById('ad_pce').value)},
+    cpdHoursThisYear:0,hourlyRate:Number(document.getElementById('ad_hr').value)||120,
+    status:'active',startedAt:now(),leftAt:null};
+  await dbPut('advisers',a); meshSend('adviser.created',a);
+  await appendAudit('adviser.created',a.name,{},a.id);
+  closeModal(); await refreshState(); render(); toast('Adviser added');
+}
+function modalEditAdviser(aid){
+  const a=state.advisers.find(x=>x.id===aid); if(!a)return{title:'?',body:''};
+  return {title:'Edit · '+a.name,body:`
+  <div class="row">
+    <div class="field"><label>name</label><input id="ea_n" value="${esc(a.name)}"></div>
+    <div class="field"><label>email</label><input id="ea_e" value="${esc(a.email)}"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>hourly rate £</label><input id="ea_hr" type="number" value="${a.hourlyRate||0}"></div>
+    <div class="field"><label>CPD YTD hours</label><input id="ea_cpd" type="number" step="0.25" value="${a.cpdHoursThisYear||0}"></div>
+  </div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveEditAdviser('${aid}')">save</button></div>`};
+}
+async function saveEditAdviser(aid){
+  const a=state.advisers.find(x=>x.id===aid);
+  a.name=document.getElementById('ea_n').value; a.email=document.getElementById('ea_e').value;
+  a.hourlyRate=Number(document.getElementById('ea_hr').value)||0;
+  a.cpdHoursThisYear=Number(document.getElementById('ea_cpd').value)||0;
+  a.updatedAt=now();
+  await dbPut('advisers',a); meshSend('adviser.updated',a);
+  closeModal(); await refreshState(); render(); toast('Saved');
+}
+
+// ADD EXPENSE
+function modalAddExpense(){
+  const cats=['adviser-salaries','PII','professional-body-fees','AML-supervision','software','premises','marketing','training','other'];
+  return {title:'Add expense',body:`
+  <div class="row">
+    <div class="field"><label>date</label><input id="ex_d" type="date" value="${tsToISO(now())}"></div>
+    <div class="field"><label>category</label><select id="ex_c">${cats.map(c=>`<option value="${c}">${c}</option>`).join('')}</select></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>amount £</label><input id="ex_a" type="number" step="0.01"></div>
+    <div class="field"><label>description</label><input id="ex_de"></div>
+  </div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveExpense()">save</button></div>`};
+}
+async function saveExpense(){
+  const e={id:id('exp'),firmId:state.firm?.id||'',dateAt:isoToTs(document.getElementById('ex_d').value)||now(),
+    category:document.getElementById('ex_c').value,amount:Number(document.getElementById('ex_a').value)||0,
+    description:document.getElementById('ex_de').value};
+  await dbPut('expenses',e);
+  await appendAudit('expense.added',e.category,{amt:e.amount});
+  closeModal(); await refreshState(); render(); toast('Expense added');
+}
+
+// ADD BODY FEE
+function modalAddBodyFee(){
+  return {title:'Add professional body fee',body:`
+  <div class="row">
+    <div class="field"><label>body</label><select id="bf_b">${PROF_BODIES.map(b=>`<option value="${b}">${b}</option>`).join('')}</select></div>
+    <div class="field"><label>category</label><select id="bf_c"><option>firm-subscription</option><option>practising-cert</option><option>aml-supervision</option><option>member-subscription</option><option>other</option></select></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>annual amount £</label><input id="bf_a" type="number"></div>
+    <div class="field"><label>renewal date</label><input id="bf_r" type="date"></div>
+  </div>
+  <div class="field"><label>notes</label><input id="bf_n"></div>
+  <div class="actions"><button class="btn" onclick="closeModal()">cancel</button><button class="btn primary" onclick="saveBodyFee()">save</button></div>`};
+}
+async function saveBodyFee(){
+  const amt=Number(document.getElementById('bf_a').value)||0;
+  const p={id:id('pbf'),firmId:state.firm?.id||'',body:document.getElementById('bf_b').value,
+    category:document.getElementById('bf_c').value,amount:amt,paidAt:now(),
+    renewalAt:isoToTs(document.getElementById('bf_r').value)||(now()+365*86400000),
+    accrualMonthly:Math.round(amt/12*100)/100,notes:document.getElementById('bf_n').value};
+  await dbPut('professionalBodyFees',p);
+  await appendAudit('body.fee.added',`${p.body} ${p.category}`,{amt});
+  closeModal(); await refreshState(); render(); toast('Fee added');
+}
+
+// VIEW INVOICE (called via deep link if needed)
+function modalViewInvoice(invId){
+  const inv=state.invoices.find(x=>x.id===invId); if(!inv)return{title:'?',body:''};
+  return{title:inv.number,body:`<pre style="background:var(--ink);padding:12px;border-radius:3px;font-family:var(--mono);font-size:11px">${esc(JSON.stringify(inv,null,2))}</pre><div class="actions"><button class="btn" onclick="closeModal()">close</button></div>`};
+}
+
+// ════════════════════════════════════════════════════════════════
+boot().catch(e=>{console.error(e);document.getElementById('view').innerHTML='<pre style="color:red;padding:20px">Boot error: '+esc(e.message||String(e))+'</pre>'});
+</script>
+</body>
+</html>
