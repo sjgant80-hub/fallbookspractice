@@ -166,22 +166,19 @@ tr.clickable:hover td{background:var(--ink)}
     'llama-3b':  { id: 'Llama-3.2-3B-Instruct-q4f16_1-MLC',   size: '~2GB',   label: '3B · balanced · default · most laptops' },
     'qwen-7b':   { id: 'Qwen2.5-7B-Instruct-q4f16_1-MLC',     size: '~5GB',   label: '7B · capable · needs decent GPU (M-series Mac / 8GB+ VRAM)' },
     'llama-8b':  { id: 'Llama-3.1-8B-Instruct-q4f16_1-MLC',   size: '~5GB',   label: '8B · common · needs decent GPU' },
-    'llama-70b': { id: 'Llama-3.1-70B-Instruct-q4f16_1-MLC',  size: '~40GB',  label: '70B · frontier · needs serious GPU + 64GB+ RAM' },
-  };
+    'llama-70b': { id: 'Llama-3.1-70B-Instruct-q4f16_1-MLC',  size: '~40GB',  label: '70B · frontier · needs serious GPU + 64GB+ RAM' }};
   const DEFAULT_MODEL = 'llama-3b';
 
   const T3_PROVIDERS = {
     anthropic: { label: 'Anthropic Claude', models: ['claude-sonnet-4-5','claude-opus-4-7','claude-haiku-4-5'], default: 'claude-sonnet-4-5', url: 'https://api.anthropic.com/v1/messages' },
     openai:    { label: 'OpenAI',           models: ['gpt-4o','gpt-4o-mini','o1-mini'],                          default: 'gpt-4o-mini',      url: 'https://api.openai.com/v1/chat/completions' },
-    google:    { label: 'Google Gemini',    models: ['gemini-1.5-pro','gemini-1.5-flash','gemini-2.0-flash-exp'], default: 'gemini-1.5-flash', url: 'https://generativelanguage.googleapis.com/v1beta/models/' },
-  };
+    google:    { label: 'Google Gemini',    models: ['gemini-1.5-pro','gemini-1.5-flash','gemini-2.0-flash-exp'], default: 'gemini-1.5-flash', url: 'https://generativelanguage.googleapis.com/v1beta/models/' }};
 
   // ─── State ───────────────────────────────────────────────────────
   const STATE = {
     config: loadConfig(),
     ai: { ready: false, loading: false, progress: 0, engine: null, model: null },
-    mesh: { active: false, peers: new Map(), bc: null, signal: null },
-  };
+    mesh: { active: false, peers: new Map(), bc: null, signal: null }};
 
   function loadConfig() {
     try { return JSON.parse(localStorage.getItem('fall-kit.config') || '{}'); }
@@ -248,8 +245,7 @@ tr.clickable:hover td{background:var(--ink)}
     if (tier === 'T2' && STATE.ai.ready && STATE.ai.engine) {
       const r = await STATE.ai.engine.chat.completions.create({
         messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userMsg }],
-        max_tokens: maxTokens,
-      });
+        max_tokens: maxTokens});
       return r.choices[0].message.content;
     }
     if (tier === 'T3' && STATE.config.api_key && STATE.config.api_provider) {
@@ -266,8 +262,7 @@ tr.clickable:hover td{background:var(--ink)}
       const r = await fetch(T3_PROVIDERS.anthropic.url, {
         method: 'POST',
         headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-        body: JSON.stringify({ model, max_tokens: maxTokens, system: sys, messages: [{ role: 'user', content: msg }] }),
-      });
+        body: JSON.stringify({ model, max_tokens: maxTokens, system: sys, messages: [{ role: 'user', content: msg }] })});
       if (!r.ok) throw new Error('Anthropic ' + r.status + ': ' + (await r.text()).slice(0, 200));
       const j = await r.json();
       return j.content[0].text;
@@ -276,8 +271,7 @@ tr.clickable:hover td{background:var(--ink)}
       const r = await fetch(T3_PROVIDERS.openai.url, {
         method: 'POST',
         headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + key },
-        body: JSON.stringify({ model, max_tokens: maxTokens, messages: [{ role: 'system', content: sys }, { role: 'user', content: msg }] }),
-      });
+        body: JSON.stringify({ model, max_tokens: maxTokens, messages: [{ role: 'system', content: sys }, { role: 'user', content: msg }] })});
       if (!r.ok) throw new Error('OpenAI ' + r.status);
       const j = await r.json();
       return j.choices[0].message.content;
@@ -286,8 +280,7 @@ tr.clickable:hover td{background:var(--ink)}
       const r = await fetch(T3_PROVIDERS.google.url + model + ':generateContent?key=' + encodeURIComponent(key), {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: sys + '\n\n---\n\n' + msg }] }], generationConfig: { maxOutputTokens: maxTokens } }),
-      });
+        body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: sys + '\n\n---\n\n' + msg }] }], generationConfig: { maxOutputTokens: maxTokens } })});
       if (!r.ok) throw new Error('Google ' + r.status);
       const j = await r.json();
       return j.candidates[0].content.parts[0].text;
@@ -528,8 +521,7 @@ tr.clickable:hover td{background:var(--ink)}
     openMint: openMint,  // v1.2 · launch kcc-mint with this seed prefilled as parent
     MODELS: WEBLLM_MODELS,
     PROVIDERS: T3_PROVIDERS,
-    state: STATE,
-  };
+    state: STATE};
 })(typeof window !== 'undefined' ? window : globalThis);
 
 </script>
@@ -592,10 +584,10 @@ const RULES={
   vatStandard:0.20,
   vatRegThreshold:90000,
   // PII (UK accountancy bodies)
-  icaewPiMinFloor:100000,                // £100k floor
-  icaewPiCap:1500000,                    // £1.5M cap
+  icaewPiMinFloor:100000,                // TBAk floor
+  icaewPiCap:1500000,                    // TBAM cap
   icaewPiMultiplier:25,                  // 25× highest fee
-  accaPiMinFloor:25000,                  // £25k or 25× gross fee income
+  accaPiMinFloor:25000,                  // TBAk or 25× gross fee income
   accaPiMultiplier:25,
   // CPD
   icaewCpdHours:90,                      // 90 hrs/yr practising
@@ -627,8 +619,7 @@ const TABS=[
   {id:'cpd',label:'CPD'},
   {id:'advisers',label:'advisers'},
   {id:'firm-pl',label:'firm P&L'},
-  {id:'qa',label:'Q&A'},
-];
+  {id:'qa',label:'Q&A'}];
 
 // Deadline kind catalogue — drives auto-population from servicesEngaged + yearEnd + vatScheme
 const DEADLINE_KINDS={
@@ -641,8 +632,7 @@ const DEADLINE_KINDS={
   'ACC':{label:'Companies House accounts',service:'accounts',recurring:'yearly'},
   'CS01':{label:'Confirmation statement',service:'companies-house-filings',recurring:'yearly'},
   'PAYE-FPS':{label:'PAYE FPS (next payday)',service:'payroll',recurring:'monthly'},
-  'PAYE-EPS':{label:'PAYE EPS monthly',service:'payroll',recurring:'monthly'},
-};
+  'PAYE-EPS':{label:'PAYE EPS monthly',service:'payroll',recurring:'monthly'}};
 
 const FEE_TYPES=['initial','ongoing','fixed-monthly','per-job','advisory'];
 const ACTIVITY_TYPES=['compliance','advisory','queries','admin','meeting'];
@@ -650,8 +640,8 @@ const PROF_BODIES=['ICAEW','ACCA','CIMA','AAT','CIOT','ATT','IFA','other'];
 
 // T0 canned Q&A (offline)
 const T0=[
-  {q:/icaew.*pi|icaew.*pii|icaew.*insur/i,a:`ICAEW Professional Indemnity minimum cover (2025-26):\n\n• Minimum: 25 × highest annual fee from any one client OR £1.5M (whichever is LOWER)\n• Floor: not less than £100k cover regardless\n• Single-claim and aggregate cover both required\n• Excess limited to greater of £30k or 2% of cover\n• Run-off cover required if firm ceases (2 yrs minimum)\n\nSource: ICAEW Professional Indemnity Insurance Regulations`},
-  {q:/acca.*pi|acca.*pii|acca.*insur/i,a:`ACCA Professional Indemnity minimum cover (2025-26):\n\n• Minimum: 25 × gross fee income OR £25,000 (whichever HIGHER)\n• Aggregate cover not less than minimum\n• Run-off cover for 6 years post-cessation recommended\n• Practising cert holders must hold qualifying PI\n\nSource: ACCA Global Practising Regulations`},
+  {q:/icaew.*pi|icaew.*pii|icaew.*insur/i,a:`ICAEW Professional Indemnity minimum cover (2025-26):\n\n• Minimum: 25 × highest annual fee from any one client OR TBAM (whichever is LOWER)\n• Floor: not less than TBAk cover regardless\n• Single-claim and aggregate cover both required\n• Excess limited to greater of TBAk or 2% of cover\n• Run-off cover required if firm ceases (2 yrs minimum)\n\nSource: ICAEW Professional Indemnity Insurance Regulations`},
+  {q:/acca.*pi|acca.*pii|acca.*insur/i,a:`ACCA Professional Indemnity minimum cover (2025-26):\n\n• Minimum: 25 × gross fee income OR TBA (whichever HIGHER)\n• Aggregate cover not less than minimum\n• Run-off cover for 6 years post-cessation recommended\n• Practising cert holders must hold qualifying PI\n\nSource: ACCA Global Practising Regulations`},
   {q:/icaew.*cpd|icaew.*continuing/i,a:`ICAEW CPD requirement (from 2023):\n\n• Practising members: 90 hours/year (CPD must be relevant to work)\n• Non-practising: still 21 hours/year baseline\n• Risk-based category (A/B/C) — most practising = Category 1 highest\n• Annual declaration by 31 October\n• Verifiable evidence required for sample audit\n\nSource: ICAEW CPD Regulations`},
   {q:/acca.*cpd|acca.*continuing/i,a:`ACCA CPD requirement (per yr):\n\n• 40 CPD units total (1 unit = 1 hour relevant learning)\n• At least 21 units must be VERIFIABLE\n• Up to 19 units may be non-verifiable (reading, reflection)\n• Annual declaration with subscription renewal\n• Practising cert holders: additional risk-based requirements\n\nSource: ACCA Continuing Professional Development guide`},
   {q:/aml.*super|supervis|supervisor.*opt/i,a:`AML supervisor options for UK accountancy practices (MLR 2017):\n\nA firm MUST be supervised by ONE of:\n• HMRC (default if no body supervises)\n• ICAEW · ACCA · CIMA · AAT · CIOT · ATT · IFA · IPA · ICAS · CAI\n\nProfessional body members typically supervised by the body. Bookkeepers without body membership default to HMRC.\n\nAnnual fee + risk-based supervision visits. Failure to register = criminal offence under MLR 2017 reg 56.`},
@@ -660,11 +650,10 @@ const T0=[
   {q:/verify.*identity|client.*identif|kyc.*step/i,a:`Reasonable steps to verify client identity (MLR 2017 reg 28):\n\n• Identity: name, DOB, address verified from independent source\n• Individuals: passport/driving licence + recent (3m) utility bill or bank statement\n• Companies: Companies House confirmation, PSC register check, directors ID'd\n• Beneficial owners (25%+ owner/controller): identified and verified\n• Sanctions screening: OFSI consolidated list at onboarding and ongoing\n• PEP check: enhanced due diligence if PEP/PEP family\n\nRecord retained 5y post-relationship end.`},
   {q:/engagement.*renew|engagement letter|letter.*engagement/i,a:`Engagement letter renewal cadence:\n\n• ICAEW: recommend annual review; reissue when scope/fee changes materially\n• ACCA: must be in writing before work commences; review at least annually\n• MUST be reissued when: service scope changes, fees change, AML risk grade changes, beneficial ownership changes\n• Both parties sign (electronic signature acceptable)\n• Retain signed copy in client file (7 years post-relationship)`},
   {q:/fee.*notif|notify.*fee|fee.*chang|fee.*increase/i,a:`Fee notification rules:\n\n• ICAEW Code §240: fees must be agreed in advance and notified in writing\n• Material changes require written notification BEFORE work commences\n• Disengagement letter required if fees disputed and unpaid\n• "Lowballing" prohibited (cannot set initial fee so low it impairs quality)\n• Contingent fees prohibited for assurance work; permitted for tax advisory with safeguards`},
-  {q:/practice purchase|buy.*practice|fee block/i,a:`Practice (fee block) purchase considerations:\n\n• Typical valuation: 0.8-1.4 × recurring fees (varies by client mix, retention)\n• Earnouts standard (2-3 year retention claw-back)\n• Due diligence: AML files, engagement letters, PI claims history, client concentration\n• ICAEW notification required if transfer affects continuing professional duties\n• TUPE may apply if staff transfer\n• Client consent for record transfer (data protection)`},
+  {q:/practice Access|buy.*practice|fee block/i,a:`Practice (fee block) Access considerations:\n\n• Typical valuation: 0.8-1.4 × recurring fees (varies by client mix, retention)\n• Earnouts standard (2-3 year retention claw-back)\n• Due diligence: AML files, engagement letters, PI claims history, client concentration\n• ICAEW notification required if transfer affects continuing professional duties\n• TUPE may apply if staff transfer\n• Client consent for record transfer (data protection)`},
   {q:/sar.*threshold|suspicious.*activity|nca.*report/i,a:`SAR (Suspicious Activity Report) — NCA:\n\n• NO monetary threshold — any suspicion of money laundering OR terrorist financing reportable\n• MLRO (Money Laundering Reporting Officer) submits via SAR Online\n• "Knowledge or suspicion" test (POCA 2002 s.330)\n• Tipping-off offence: must not alert subject (POCA 2002 s.333A)\n• Failure to report = criminal offence (up to 5 years)\n• Defence Against Money Laundering (DAML) SAR if seeking consent\n\nMaintain internal SAR register (date, MLRO ref, outcome).`},
   {q:/risk assess|risk.*review|cadence/i,a:`Risk assessment review cadence:\n\n• Firm-wide risk assessment (FWRA): review at least annually OR on material change (new services, new jurisdictions, new client types)\n• Client risk assessment (CRA): at onboarding, then at least annually for ongoing relationships\n• Trigger events for re-assessment: PEP status change, beneficial ownership change, unusual activity, change of service scope\n• Document review (date, reviewer, decision) — supervisor will sample\n\nSource: MLR 2017 reg 18 (FWRA) + reg 28 (ongoing monitoring)`},
-  {q:/suspicious.*report|sar.*how|how.*report/i,a:`Suspicious activity reporting workflow:\n\n1. Identify suspicion (any team member can raise) — log internally\n2. MLRO reviews — concludes suspicion exists?\n3. If yes: submit SAR via SAR Online (NCA) within reasonable time\n4. If seeking consent to proceed with transaction: DAML SAR (7 working days + 31 calendar days moratorium possible)\n5. DO NOT tip off subject (criminal offence)\n6. Internal register: date raised, MLRO decision, NCA reference, outcome\n7. Retain 5 years\n\nNCA SAR Online: nationalcrimeagency.gov.uk/sars`},
-];
+  {q:/suspicious.*report|sar.*how|how.*report/i,a:`Suspicious activity reporting workflow:\n\n1. Identify suspicion (any team member can raise) — log internally\n2. MLRO reviews — concludes suspicion exists?\n3. If yes: submit SAR via SAR Online (NCA) within reasonable time\n4. If seeking consent to proceed with transaction: DAML SAR (7 working days + 31 calendar days moratorium possible)\n5. DO NOT tip off subject (criminal offence)\n6. Internal register: date raised, MLRO decision, NCA reference, outcome\n7. Retain 5 years\n\nNCA SAR Online: nationalcrimeagency.gov.uk/sars`}];
 
 // ════════════════════════════════════════════════════════════════
 // IDB layer
@@ -869,7 +858,7 @@ function deadlineColour(d){
 // PII calc
 // ════════════════════════════════════════════════════════════════
 function calcIcaewPiMin(){
-  // 25 × highest annual fee from a single client, OR £1.5M (whichever LOWER), floor £100k
+  // 25 × highest annual fee from a single client, OR TBAM (whichever LOWER), floor TBAk
   const byClient={};
   state.feeRecords.forEach(f=>{
     if(!f.clientId)return;
@@ -947,7 +936,7 @@ async function ensureDemo(){
     engagement:{startedAt:now()-2*365*86400000,type:'ongoing',feeBasis:'fixed-monthly',feeAmount:450,feeFrequency:'monthly',nextReviewDue:now()+180*86400000,letterOfEngagementHash:'',letterOfEngagementSignedAt:now()-365*86400000},
     kyc:{status:'verified',riskGrade:'low',pepFlag:false,sanctionsStatus:'clear',
       sourceOfFundsForServices:'Trading revenue',natureAndPurposeOfBusiness:'Artisan bakery — wholesale & retail',
-      expectedTransactionPatterns:'Daily receipts £1-3k, weekly supplier payments',documentsHeld:[],
+      expectedTransactionPatterns:'Daily receipts TBA-3k, weekly supplier payments',documentsHeld:[],
       amlSupervisor:'ICAEW',amlSupervisorRef:'AML-2024-789',lastReviewAt:now()-30*86400000,nextReviewDue:now()+335*86400000},
     deadlines:[],
     adviserId:advId};
@@ -1378,8 +1367,8 @@ function viewPII(){
       <div class="kpi"><span class="l">Held (single claim)</span><span class="v">${fmtGBP(covered)}</span></div>
       <div class="kpi"><span class="l">Gap</span><span class="v ${gap>0?'red':'green'}">${fmtGBP(gap)}</span></div>
       <div style="font-size:11px;color:var(--cream-muted);margin-top:10px">
-      ${body==='ICAEW'?'ICAEW: 25× highest annual single-client fee OR £1.5M (whichever LOWER) · floor £100k':''}
-      ${body==='ACCA'?'ACCA: 25× gross fee income OR £25k (whichever HIGHER)':''}
+      ${body==='ICAEW'?'ICAEW: 25× highest annual single-client fee OR TBAM (whichever LOWER) · floor TBAk':''}
+      ${body==='ACCA'?'ACCA: 25× gross fee income OR TBAk (whichever HIGHER)':''}
       </div>
     </div>
     ${current?`

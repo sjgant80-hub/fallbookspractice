@@ -21,7 +21,7 @@ Open `index.html` in a modern browser. A demo firm (Patel & Co Chartered Account
 | **time** | 6-minute units. Compliance / advisory / queries / admin / meeting. Weekly view + WIP by client at adviser rate |
 | **billing** | Fee ledger (initial · ongoing · fixed-monthly · per-job · advisory). Recurring fee runner (one-click monthly post). Invoice generator → Markdown + postMessage handoff to FallBooksPaper |
 | **HMRC agent** | Per-client 64-8 authorisations (SA / CT / VAT / PAYE / CIS). Review-due traffic light |
-| **PII** | ICAEW: 25 × highest single-client fee OR £1.5M (whichever lower), floor £100k. ACCA: 25 × gross fee income OR £25k (whichever higher). Held vs required, expiry RAG |
+| **PII** | ICAEW: 25 × highest single-client fee OR TBAM (whichever lower), floor TBAk. ACCA: 25 × gross fee income OR TBAk (whichever higher). Held vs required, expiry RAG |
 | **AML** | Firm supervisor + ref. High-risk / PEP / sanctions counters. SAR register (NCA pointer — submission still via SAR Online). Annual review committed to audit chain |
 | **CPD** | Per-adviser progress bar against body target (ICAEW 90h, ACCA 40u, CIMA 20h). Activity log, practising cert status |
 | **advisers** | Per-adviser P&L: fees MTD/YTD, clients, time, realisation rate |
